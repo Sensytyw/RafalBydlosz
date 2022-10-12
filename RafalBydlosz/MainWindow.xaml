@@ -26,27 +26,27 @@
 
       <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"></TextBox>
       
-        <Button Grid.Row="1">Button 1</Button>
-        <Button Grid.Column="1" Grid.Row="1"> Button 2 </Button>
-        <Button Grid.Column="2" Grid.Row="1">Button 3</Button>
-        <Button Grid.Column="3" Grid.Row="1">Button 4</Button>
-        
-        <Button Grid.Row="2">Button5</Button>
+        <Button Grid.Row="1" FontSize="36" FontFamily="Gothic Century"> 7 </Button>
+        <Button Grid.Column="1" Grid.Row="1" FontSize="36" FontFamily="Gothic Century" > 8 </Button>
+        <Button Grid.Column="2" Grid.Row="1" FontSize="36" FontFamily="Gothic Century" > 9 </Button>
+        <Button Grid.Column="3" Grid.Row="1" FontSize="36" FontFamily="Gothic Century" > + </Button>
 
-        <Button Grid.Column="1" Grid.Row="2">Button 6</Button>
-        <Button Grid.Column="2" Grid.Row="2">Button 7</Button>
-        <Button Grid.Column="3" Grid.Row="2">Button 8</Button>
-        
-        <Button Grid.Row="3">Button 9</Button>
-        
-        <Button Grid.Column="1" Grid.Row="3">Button 10</Button>
-        <Button Grid.Column="2" Grid.Row="3">Button 11</Button>
-        <Button Grid.Column="3" Grid.Row="3" Grid.RowSpan="2">Button 15</Button>
-        
-        <Button Grid.Row="4">Button 12</Button>
+        <Button Grid.Row="2" FontSize="36" FontFamily="Gothic Century" > 4 </Button>
 
-        <Button Grid.Column="1" Grid.Row="4">Button 13</Button>
-        <Button Grid.Column="2" Grid.Row="4">Button 14</Button>
+        <Button Grid.Column="1" Grid.Row="2" FontSize="36" FontFamily="Gothic Century" > 5 </Button>
+        <Button Grid.Column="2" Grid.Row="2" FontSize="36" FontFamily="Gothic Century" > 6 </Button>
+        <Button Grid.Column="3" Grid.Row="2" FontSize="36" FontFamily="Gothic Century" > - </Button>
+
+        <Button Grid.Row="3" FontSize="36" FontFamily="Gothic Century" > 1 </Button>
+
+        <Button Grid.Column="1" Grid.Row="3" FontSize="36" FontFamily="Gothic Century" > 2 </Button>
+        <Button Grid.Column="2" Grid.Row="3" FontSize="36" FontFamily="Gothic Century" > 3 </Button>
+        <Button Grid.Column="3" Grid.Row="3" Grid.RowSpan="2" FontSize="76" FontFamily="Gothic Century" > = </Button>
+
+        <Button Grid.Row="4" FontSize="36" FontFamily="Gothic Century"> 0 </Button>
+
+        <Button Grid.Column="1" Grid.Row="4" FontSize="36" FontFamily="Gothic Century" > x </Button>
+        <Button Grid.Column="2" Grid.Row="4" FontSize="36" FontFamily="Gothic Century" > / </Button>
 
 
 
