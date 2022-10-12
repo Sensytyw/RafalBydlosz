@@ -1,0 +1,18 @@
+﻿<Window x:Class="RafalBydlosz.Zad4"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RafalBydlosz"
+        mc:Ignorable="d"
+        Title="Zad4" Height="300" Width="500">
+    <Canvas>
+        <Button Canvas.Left="30" Canvas.Top="50">Mom Grandad</Button>
+        <Button Canvas.Left="120" Canvas.Top="50">Mom Grandmom</Button>
+        <Button Canvas.Right="30" Canvas.Top="50">Dad Grandad</Button>
+        <Button Canvas.Right="120" Canvas.Top="50">Mom Grandmom</Button>
+        <Button Canvas.Right="100" Canvas.Top="100">Mom</Button>
+        <Button Canvas.Left="100" Canvas.Top="100">Dad</Button>
+        <Button Canvas.Right="240" Canvas.Top="150">Me</Button>
+    </Canvas>
+</Window>
