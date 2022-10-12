@@ -1,0 +1,47 @@
+﻿<Window x:Class="RafalBydlosz.Zad2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RafalBydlosz"
+        mc:Ignorable="d"
+    Title="Zad2" Height="240" Width="460">
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <Grid>
+    
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0">
+                <Label Height="40" Width="185" HorizontalAlignment="Left"
+                 HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" >Imie</Label>
+                <Label Height="40" Width="185" HorizontalAlignment="Left"
+                 HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" >Nazwisko</Label>
+                <Label Height="40" Width="185" HorizontalAlignment="Left"
+                 HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" >Data urodzenia</Label>
+                <Label Height="40" Width="185" HorizontalAlignment="Left"
+                 HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" >Numer semestru</Label>
+
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBox Height="40" Width="185" HorizontalAlignment="Left"
+                 HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" ></TextBox>
+                <TextBox Height="40" Width="185" HorizontalAlignment="Left"
+                 HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" ></TextBox>
+                <TextBox Height="40" Width="185" HorizontalAlignment="Left"
+                 HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" ></TextBox>
+                <TextBox Height="40" Width="185" HorizontalAlignment="Left"
+                 HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" ></TextBox>
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <Button Height="40" Width="50" VerticalAlignment="Stretch"> Dodaj</Button>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+
+
+</Window>
