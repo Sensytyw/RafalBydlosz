@@ -23,6 +23,44 @@ namespace RafalBydlosz
 		public MainWindow()
 		{
 			InitializeComponent();
+
+
+		}
+
+		private void ButtonClear_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void ButtonResult_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void ButtonMinus_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void ButtonAdd_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void ButtonMultiply_Click(object sender, RoutedEventArgs e)
+		{
+
+		}
+
+		private void ButtonDivide_Click(object sender, RoutedEventArgs e)
+		{
+
 		}
 	}
+
 }
