@@ -33,6 +33,7 @@ namespace RafalBydlosz
 		private void ButtonClear_Click(object sender, RoutedEventArgs e)
 		{
 			ResultText.Clear();
+		
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
