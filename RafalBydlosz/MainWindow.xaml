@@ -24,9 +24,7 @@
 
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="ResultText" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" TextAlignment="Right" Margin="3" Background="BlanchedAlmond"></TextBox>
-        <TextBox x:Name="CurrentOperationText" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" TextAlignment="Right" Margin="3" ></TextBox>
-        
+        <TextBox x:Name="ResultText" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" TextAlignment="Right" Margin="3" Background="BlanchedAlmond" ></TextBox>
         <Button x:Name="Button7" Grid.Row="1" Click="Button_Click" Content="7" Background="#8A9C72"> </Button>
         <Button x:Name="Button8" Grid.Column="1" Grid.Row="1"   Click="Button_Click" Content="8" Background="#8A9C72" ></Button>
         <Button x:Name="Button9" Grid.Column="2" Grid.Row="1"   Click="Button_Click" Content="9" Background="#8A9C72" ></Button>
