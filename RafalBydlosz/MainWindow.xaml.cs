@@ -34,32 +34,38 @@ namespace RafalBydlosz
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
+			ResultText.Text = string.Empty;
+			var button = sender as Button;
+			var currentNumber = button.Name[button.Name.Length - 1];
+			CurrentOperationText.Text += currentNumber;
 
 		}
 
 		private void ButtonResult_Click(object sender, RoutedEventArgs e)
 		{
+			var operation = CurrentOperationText.Text;
 
+			CurrentOperationText.Text = String.Empty;
 		}
 
 		private void ButtonMinus_Click(object sender, RoutedEventArgs e)
 		{
-
+			CurrentOperationText.Text += "-";
 		}
 
 		private void ButtonAdd_Click(object sender, RoutedEventArgs e)
 		{
-
+			CurrentOperationText.Text += "+";
 		}
 
 		private void ButtonMultiply_Click(object sender, RoutedEventArgs e)
 		{
-
+			CurrentOperationText.Text += "*";
 		}
 
 		private void ButtonDivide_Click(object sender, RoutedEventArgs e)
 		{
-
+			CurrentOperationText.Text += "/";
 		}
 	}
 

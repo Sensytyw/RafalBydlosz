@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RafalBydlosz"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" FontSize="56" FontFamily="Gothic Century" Background="DarkGreen">
+        Title="Calculator" Height="450" Width="800" FontSize="56" FontFamily="Gothic Century" Background="#454E39">
     <Grid>
         <Grid.ColumnDefinitions>
             
@@ -24,30 +24,31 @@
 
         </Grid.RowDefinitions>
 
-      <TextBox Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4"></TextBox>
-      
-        <Button x:Name="Button7" Grid.Row="1" Click="Button_Click" Content="7"> </Button>
-        <Button x:Name="Button8" Grid.Column="1" Grid.Row="1"   Click="Button_Click" Content="8" ></Button>
-        <Button x:Name="Button9" Grid.Column="2" Grid.Row="1"   Click="Button_Click" Content="9" ></Button>
-        <Button x:Name="ButtonClear" Grid.Column="3" Grid.Row="1"   Click="ButtonClear_Click" Content="C"></Button>
+        <TextBox x:Name="ResultText" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" TextAlignment="Right" Margin="3" Background="BlanchedAlmond"></TextBox>
+        <TextBox x:Name="CurrentOperationText" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" TextAlignment="Right" Margin="3" ></TextBox>
+        
+        <Button x:Name="Button7" Grid.Row="1" Click="Button_Click" Content="7" Background="#8A9C72"> </Button>
+        <Button x:Name="Button8" Grid.Column="1" Grid.Row="1"   Click="Button_Click" Content="8" Background="#8A9C72" ></Button>
+        <Button x:Name="Button9" Grid.Column="2" Grid.Row="1"   Click="Button_Click" Content="9" Background="#8A9C72" ></Button>
+        <Button x:Name="ButtonClear" Grid.Column="3" Grid.Row="1"   Click="ButtonClear_Click" Content="C" Background="#9C8A72"></Button>
 
-        <Button x:Name="Button4" Grid.Row="2" FontSize="56"  Click="Button_Click" Content="4" ></Button>
+        <Button x:Name="Button4" Grid.Row="2" FontSize="56"  Click="Button_Click" Content="4" Background="#8A9C72" ></Button>
 
-        <Button x:Name="Button5" Grid.Column="1" Grid.Row="2"  Click="Button_Click" Content="5" ></Button>
-        <Button x:Name="Button6" Grid.Column="2" Grid.Row="2"   Click="Button_Click" Content="6" ></Button>
-        <Button x:Name="ButtonAdd" Grid.Column="3" Grid.Row="2"   Click="ButtonAdd_Click" Content="+"></Button>
+        <Button x:Name="Button5" Grid.Column="1" Grid.Row="2"  Click="Button_Click" Content="5" Background="#8A9C72" ></Button>
+        <Button x:Name="Button6" Grid.Column="2" Grid.Row="2"   Click="Button_Click" Content="6" Background="#8A9C72" ></Button>
+        <Button x:Name="ButtonAdd" Grid.Column="3" Grid.Row="2"   Click="ButtonAdd_Click" Content="+" Background="#9C728A"></Button>
 
-        <Button x:Name="Button1" Grid.Row="3" Click="Button_Click" Content="1"></Button>
+        <Button x:Name="Button1" Grid.Row="3" Click="Button_Click" Content="1" Background="#8A9C72"></Button>
 
-        <Button x:Name="Button2" Grid.Column="1" Grid.Row="3" Click="Button_Click" Content="2" ></Button>
-        <Button x:Name="Button3" Grid.Column="2" Grid.Row="3" Click="Button_Click" Content="3"></Button>
-        <Button x:Name="ButtonMinus" Grid.Column="3" Grid.Row="3" Click="ButtonMinus_Click" Content="-" ></Button>
-        <Button x:Name="ButtonResult" Grid.Column="3" Grid.Row="4" Click="ButtonResult_Click" Content="="></Button>
+        <Button x:Name="Button2" Grid.Column="1" Grid.Row="3" Click="Button_Click" Content="2" Background="#8A9C72" ></Button>
+        <Button x:Name="Button3" Grid.Column="2" Grid.Row="3" Click="Button_Click" Content="3" Background="#8A9C72"></Button>
+        <Button x:Name="ButtonMinus" Grid.Column="3" Grid.Row="3" Click="ButtonMinus_Click" Content="-" Background="#9C728A" ></Button>
+        <Button x:Name="ButtonResult" Grid.Column="3" Grid.Row="4" Click="ButtonResult_Click" Content="=" Background="#728A9C"></Button>
 
-        <Button x:Name="Button0" Grid.Row="4" Click="Button_Click" Content="0"></Button>
+        <Button x:Name="Button0" Grid.Row="4" Click="Button_Click" Content="0" Background="#8A9C72"></Button>
 
-        <Button x:Name="ButtonMultiply" Grid.Column="1" Grid.Row="4" Click="ButtonMultiply_Click" Content="x" ></Button>
-        <Button x:Name="ButtonDivide" Grid.Column="2" Grid.Row="4" Click="ButtonDivide_Click" Content="/" ></Button>
+        <Button x:Name="ButtonMultiply" Grid.Column="1" Grid.Row="4" Click="ButtonMultiply_Click" Content="x" Background="#9C728A" ></Button>
+        <Button x:Name="ButtonDivide" Grid.Column="2" Grid.Row="4" Click="ButtonDivide_Click" Content="/" Background="#9C728A" ></Button>
 
 
 
