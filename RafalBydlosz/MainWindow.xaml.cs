@@ -65,8 +65,11 @@ namespace RafalBydlosz
 			}
 			else if (op == '/')
 			{
-				result = first / second;
-				first = result;
+				if (second != 0)
+				{
+					result = first / second;
+					first = result;
+				}
 			}
 			if (ResultText.Text == "0")
 			{
