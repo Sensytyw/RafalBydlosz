@@ -7,4 +7,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="tac_tic_toe_icon_183167.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="tac_tic_toe_icon_183167.png" />
+  </ItemGroup>
+
 </Project>
