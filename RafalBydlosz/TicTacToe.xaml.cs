@@ -28,5 +28,10 @@ namespace RafalBydlosz
 		{
 
 		}
+
+		private void NewGame(object sender, RoutedEventArgs e)
+		{
+
+		}
 	}
 }
