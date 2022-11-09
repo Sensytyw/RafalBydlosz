@@ -9,38 +9,49 @@
     <Border BorderBrush="#92AC86"
             BorderThickness="2" >
         <Grid>
-            <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <Grid.RowDefinitions>
+
             <RowDefinition Height="*" />
                 <RowDefinition Height="80" />
             </Grid.RowDefinitions>
-            <Button x:Name="XO1" Grid.Row="0" Click="XO_Button_Click" Margin="2"
-                    Foreground="#4B5845" Background="#F3F3F3"/>
-        <Button x:Name="XO2" Grid.Column="1" Grid.Row="0" Click="XO_Button_Click"  Margin="2"
+            <Grid x:Name="gridBoard">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+                <Button Tag="0,0"  x:Name="XO1" Grid.Row="0" Click="XO_Button_Click" Margin="2"
+                    Foreground="#4B5845" Background="#F3F3F3" />
+                <Button Tag="0,1" x:Name="XO2" Grid.Column="1" Grid.Row="0" Click="XO_Button_Click"  Margin="2"
                 Foreground="#4B5845" Background="#ECF4E8" />
-        <Button x:Name="XO3" Grid.Column="2" Grid.Row="0" Click="XO_Button_Click" Margin="2"
+                <Button Tag="0,2" x:Name="XO3" Grid.Column="2" Grid.Row="0" Click="XO_Button_Click" Margin="2"
                 Foreground="#4B5845" Background="#F3F3F3" />
 
-        <Button x:Name="XO4" Grid.Row="1" Click="XO_Button_Click" Margin="2"
+                <Button Tag="1,0" x:Name="XO4" Grid.Row="1" Click="XO_Button_Click" Margin="2"
                 Foreground="#4B5845" Background="#ECF4E8"/>
-        <Button x:Name="XO5" Grid.Column="1" Grid.Row="1" Click="XO_Button_Click" Margin="2"
+                <Button Tag="1,1" x:Name="XO5" Grid.Column="1" Grid.Row="1" Click="XO_Button_Click" Margin="2"
                 Foreground="#4B5845" Background="#F3F3F3" />
-        <Button x:Name="XO6" Grid.Column="2" Grid.Row="1" Click="XO_Button_Click" Margin="2"
+                <Button Tag="1,2" x:Name="XO6" Grid.Column="2" Grid.Row="1" Click="XO_Button_Click" Margin="2"
                 Foreground="#4B5845" Background="#ECF4E8" />
 
-        <Button x:Name="XO7" Grid.Row="2" Click="XO_Button_Click" Margin="2"
+                <Button Tag="2,0" x:Name="XO7" Grid.Row="2" Click="XO_Button_Click" Margin="2"
                 Foreground="#4B5845" Background="#F3F3F3"/>
-        <Button x:Name="XO8" Grid.Column="1" Grid.Row="2" Click="XO_Button_Click" Margin="2"
+                <Button Tag="2,1" x:Name="XO8" Grid.Column="1" Grid.Row="2" Click="XO_Button_Click" Margin="2"
                 Foreground="#4B5845" Background="#ECF4E8" />
-        <Button x:Name="XO9" Grid.Column="2" Grid.Row="2" Click="XO_Button_Click" Margin="2"
+                <Button Tag="2,2" x:Name="XO9" Grid.Column="2" Grid.Row="2" Click="XO_Button_Click" Margin="2"
                 Foreground="#4B5845" Background="#F3F3F3" />
-            <Button x:Name="btnNewGame" Grid.Column="1" Grid.Row="3" Content="New Game"  Click="NewGame_Click" Foreground="#F3F3F3" FontFamily="TeX Gyre Adventor" FontWeight="Light" FontSize="30" Margin="8" Background="#4B5845" />
+                </Grid>
+            <TextBlock x:Name="WinScreen" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       FontWeight="SemiBold" Foreground="#F3F3F3" Background="#4B5845"
+                       Visibility="Collapsed"> Player X Wins :)</TextBlock>             
+            <Button x:Name="btnNewGame" Grid.Column="1" Grid.Row="3" Content="New Game"  Click="NewGame_Click"
+                    Foreground="#F3F3F3" FontFamily="TeX Gyre Adventor" FontWeight="Light" FontSize="30" Margin="8" Background="#4B5845" />
         </Grid>
         
     </Border>
