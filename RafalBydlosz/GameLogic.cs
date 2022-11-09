@@ -43,7 +43,7 @@ namespace RafalBydlosz
 			{
 				if (!String.IsNullOrWhiteSpace(Board[0,i]))
 				{
-					if (Board[0,i] == Board[0,i] && Board[0,i] == Board[2,i])
+					if (Board[0,i] == Board[1,i] && Board[0,i] == Board[2,i])
 					{
 						return true;
 					}
