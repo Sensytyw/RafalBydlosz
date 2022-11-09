@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="Tic-Tac-Toe" Height="580" Width="500" Background="#92AC86" FontFamily="CenturyGothic" FontSize="65" MinHeight="500" MinWidth="500">
     <Border BorderBrush="#92AC86"
-            BorderThickness="2" > 
-    <Grid>
-        <Grid.ColumnDefinitions>
+            BorderThickness="2" >
+        <Grid>
+            <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -20,18 +20,27 @@
             <RowDefinition Height="*" />
                 <RowDefinition Height="80" />
             </Grid.RowDefinitions>
-        <Button x:Name="XO1" Grid.Row="0" Click="XO_Button_Click" Margin="2" Background="#F3F3F3"/>
-        <Button x:Name="XO2" Grid.Column="1" Grid.Row="0"  Click="XO_Button_Click"  Margin="2" Background="#ECF4E8" />
-        <Button x:Name="XO3" Grid.Column="2" Grid.Row="0"  Click="XO_Button_Click" Margin="2" Background="#F3F3F3" />
+            <Button x:Name="XO1" Grid.Row="0" Click="XO_Button_Click" Margin="2"
+                    Foreground="#4B5845" Background="#F3F3F3"/>
+        <Button x:Name="XO2" Grid.Column="1" Grid.Row="0" Click="XO_Button_Click"  Margin="2"
+                Foreground="#4B5845" Background="#ECF4E8" />
+        <Button x:Name="XO3" Grid.Column="2" Grid.Row="0" Click="XO_Button_Click" Margin="2"
+                Foreground="#4B5845" Background="#F3F3F3" />
 
-        <Button x:Name="XO4" Grid.Row="1" Click="XO_Button_Click" Margin="2" Background="#ECF4E8"/>
-        <Button x:Name="XO5" Grid.Column="1" Grid.Row="1"   Click="XO_Button_Click" Margin="2" Background="#F3F3F3" />
-        <Button x:Name="XO6" Grid.Column="2" Grid.Row="1"   Click="XO_Button_Click" Margin="2" Background="#ECF4E8" />
+        <Button x:Name="XO4" Grid.Row="1" Click="XO_Button_Click" Margin="2"
+                Foreground="#4B5845" Background="#ECF4E8"/>
+        <Button x:Name="XO5" Grid.Column="1" Grid.Row="1" Click="XO_Button_Click" Margin="2"
+                Foreground="#4B5845" Background="#F3F3F3" />
+        <Button x:Name="XO6" Grid.Column="2" Grid.Row="1" Click="XO_Button_Click" Margin="2"
+                Foreground="#4B5845" Background="#ECF4E8" />
 
-        <Button x:Name="XO7" Grid.Row="2" Click="XO_Button_Click" Margin="2" Background="#F3F3F3"/>
-        <Button x:Name="XO8" Grid.Column="1" Grid.Row="2"   Click="XO_Button_Click" Margin="2" Background="#ECF4E8" />
-        <Button x:Name="XO9" Grid.Column="2" Grid.Row="2"   Click="XO_Button_Click" Margin="2" Background="#F3F3F3" />
-            <Button x:Name="btnNewGame" Grid.Column="1" Grid.Row="3" Content="New Game"  Click="NewGame" Foreground="#F3F3F3" FontFamily="TeX Gyre Adventor" FontWeight="Light" FontSize="30" Margin="8" Background="#4B5845" />
+        <Button x:Name="XO7" Grid.Row="2" Click="XO_Button_Click" Margin="2"
+                Foreground="#4B5845" Background="#F3F3F3"/>
+        <Button x:Name="XO8" Grid.Column="1" Grid.Row="2" Click="XO_Button_Click" Margin="2"
+                Foreground="#4B5845" Background="#ECF4E8" />
+        <Button x:Name="XO9" Grid.Column="2" Grid.Row="2" Click="XO_Button_Click" Margin="2"
+                Foreground="#4B5845" Background="#F3F3F3" />
+            <Button x:Name="btnNewGame" Grid.Column="1" Grid.Row="3" Content="New Game"  Click="NewGame_Click" Foreground="#F3F3F3" FontFamily="TeX Gyre Adventor" FontWeight="Light" FontSize="30" Margin="8" Background="#4B5845" />
         </Grid>
         
     </Border>
