@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RafalBydlosz"
         mc:Ignorable="d"
+
         Title="PlayerTwo" Height="1210" Width="600" Background="#3B5B77" ResizeMode="NoResize" Icon="/PlayeeerTwo.png">
     <Window.Resources>
         <Style TargetType="Label">
@@ -16,15 +17,10 @@
 
     </Window.Resources>
     <Grid x:Name="P1">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="33*"/>
-            <ColumnDefinition Width="190*"/>
-            <ColumnDefinition Width="77*"/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="10" />
-            <RowDefinition Height="1*" />
+            <RowDefinition Height="600*" />
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="600*" />
         </Grid.RowDefinitions>
         <Grid x:Name="shoot" Grid.Column="0" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
@@ -95,6 +91,6 @@
             <Label Grid.Row="11" Grid.Column="8" Grid.ColumnSpan="2" Content="Ships:" Foreground="White" BorderBrush="#4C263A" Background="#5F2F49" BorderThickness="0,6,0,0"/>
             <Label x:Name="counter" Grid.Row="11" Grid.Column="11" Grid.ColumnSpan="1" Foreground="White" BorderBrush="#4C263A" Background="#5F2F49" BorderThickness="0,6,0,0"/>
         </Grid>
-        <Label Grid.ColumnSpan="3" Background="#2F495F" Margin="0,592,0,0" Grid.RowSpan="2"/>
+        <Label Grid.Row="1" Grid.ColumnSpan="3" Background="#2F495F"/>
     </Grid>
 </Window>
