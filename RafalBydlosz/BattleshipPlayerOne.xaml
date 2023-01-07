@@ -5,7 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RafalBydlosz"
         mc:Ignorable="d"
-
         Title="PlayerOne" Height="1210" Width="600" Background="#3B5B77" ResizeMode="NoResize" Icon="/PlayeeerOne.png" >
 
     <Window.Resources>
