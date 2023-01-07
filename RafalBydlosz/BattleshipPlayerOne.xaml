@@ -5,13 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RafalBydlosz"
         mc:Ignorable="d"
-        Title="PlayerOne" Height="1200" Width="600">
+        Title="PlayerOne" Height="1210" Width="600" Background="#3B5B77" ResizeMode="NoResize" >
     <Window.Resources>
         <Style TargetType="Label">
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontSize" Value="28"/>
             <Setter Property="FontFamily" Value="Century Gothic"/>
-            <Setter Property="BorderBrush" Value="#618B4F"/>
             <Setter Property="BorderThickness" Value="1,1,1,1"/>
         </Style>
 
@@ -19,6 +18,7 @@
     <Grid x:Name="P1">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
+            <RowDefinition Height="10" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
         <Grid x:Name="shoot" Grid.Column="0">
@@ -53,7 +53,43 @@
                 
 
             </Grid.RowDefinitions>
-            <Label Grid.Row="11" Grid.ColumnSpan="11" Content="Shoot" BorderBrush="Red" BorderThickness="2,2,2,2"/>
+            <Label Grid.Row="0" Grid.ColumnSpan="11" Content="Shooting area" Foreground="White" BorderBrush="#262626" Background="#2F2F2F" BorderThickness="0,0,0,6"/>
         </Grid>
+        <Grid x:Name="set" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="11" Grid.ColumnSpan="8" Content="Place your ships here" Foreground="White" BorderBrush="#262626" Background="#2F2F2F" BorderThickness="0,6,0,0"/>
+            <Label Grid.Row="11" Grid.Column="8" Grid.ColumnSpan="2" Content="Ships:" Foreground="White" BorderBrush="#4C263A" Background="#5F2F49" BorderThickness="0,6,0,0"/>
+            <Label x:Name="counter" Grid.Row="11" Grid.Column="11" Grid.ColumnSpan="1" Foreground="White" BorderBrush="#4C263A" Background="#5F2F49" BorderThickness="0,6,0,0"/>
+        </Grid>
+        <Label Grid.Row="1" Grid.ColumnSpan="11" Background="#2F495F"/>
     </Grid>
 </Window>

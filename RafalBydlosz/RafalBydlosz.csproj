@@ -8,10 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="1.png" />
     <None Remove="tac_tic_toe_icon_183167.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="1.png" />
     <Resource Include="tac_tic_toe_icon_183167.png" />
   </ItemGroup>
 
