@@ -23,6 +23,7 @@
         </Grid.RowDefinitions>
         <Grid x:Name="shoot" Grid.Column="0" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
+                
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
@@ -33,8 +34,7 @@
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
                 <ColumnDefinition Width="1*" />
-
-
+                <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
@@ -49,11 +49,25 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
-                <RowDefinition Height="1*" />
-
-
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Grid.ColumnSpan="11" Content="Shooting area" Foreground="White" BorderBrush="#262626" Background="#2F2F2F" BorderThickness="0,0,0,6"/>
+            <Label Grid.Row="0" Grid.ColumnSpan="8" Content="Shooting area" Foreground="White" Background="#2F2F2F"/>
+            <Button Grid.Column="8" Grid.ColumnSpan="3" Grid.Row="0" x:Name="restart" Content="Reset" Foreground="White" BorderBrush="#723535" Background="#8F4242" BorderThickness="2,0,6,6" FontFamily="century gothic" FontSize="26" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Heavy" Click="restart_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)" To="#8F4242"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </Grid>
         <Grid x:Name="set" Grid.Row="1"   Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
@@ -83,12 +97,11 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="1*" />
-
             </Grid.RowDefinitions>
+            <Label Grid.Row="11" Grid.ColumnSpan="8" Content="P1 Place your ships here" Foreground="White" Background="#2F2F2F" BorderThickness="0"/>
+            <Label Grid.Row="11" Grid.Column="8" Grid.ColumnSpan="2" Content="Ships:" Foreground="White"  Background="#5F2F49" BorderThickness="0"/>
+            <Label x:Name="counter" Grid.Row="11" Grid.Column="10" Grid.ColumnSpan="1" Foreground="White"  Background="#5F2F49" BorderThickness="0"/>
 
-            <Label Grid.Row="11" Grid.ColumnSpan="8" Content="Place your ships here" Foreground="White" BorderBrush="#262626" Background="#2F2F2F" BorderThickness="0,6,0,0"/>
-            <Label Grid.Row="11" Grid.Column="8" Grid.ColumnSpan="2" Content="Ships:" Foreground="White" BorderBrush="#4C263A" Background="#5F2F49" BorderThickness="0,6,0,0"/>
-            <Label x:Name="counter" Grid.Row="11" Grid.Column="11" Grid.ColumnSpan="1" Foreground="White" BorderBrush="#4C263A" Background="#5F2F49" BorderThickness="0,6,0,0"/>
         </Grid>
         <Label Grid.Row="1" Grid.ColumnSpan="3" Background="#2F495F"/>
     </Grid>
