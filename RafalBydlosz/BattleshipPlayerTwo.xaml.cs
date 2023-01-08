@@ -69,7 +69,7 @@ namespace RafalBydlosz
 			{
 				switch (k)
 				{
-					//strzelanie
+					//shooting
 					case 0:
 						for (int i = 1; i < 11; i++)
 						{
@@ -95,7 +95,7 @@ namespace RafalBydlosz
 							}
 						}
 						break;
-					//stawianie  
+					//placing  
 					case 1:
 						for (int i = 1; i < 11; i++)
 						{

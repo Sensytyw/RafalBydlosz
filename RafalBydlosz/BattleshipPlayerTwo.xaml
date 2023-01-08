@@ -54,7 +54,9 @@
 
 
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Grid.ColumnSpan="11" Content="Shooting area" Foreground="White" BorderBrush="#262626" Background="#2F2F2F" BorderThickness="0"/>
+            <Label Grid.Column="0" Grid.Row="1" Grid.RowSpan="10" Background="#2F2F2F" BorderThickness="0" />
+            <Label Grid.Column="0" Grid.Row="0" Background="#5B3B77" BorderThickness="0" />
+            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="11" Content="Shooting area" Foreground="White" Background="#2F2F2F" BorderThickness="0"/>
         </Grid>
         <Grid x:Name="set" Grid.Row="1" Grid.RowSpan="2">
             <Grid.ColumnDefinitions>
@@ -87,11 +89,17 @@
                 <RowDefinition Height="1*" />
 
             </Grid.RowDefinitions>
-
-            <Label Grid.Row="11" Grid.ColumnSpan="8" Content="P1 Place your ships here" Foreground="White" BorderBrush="#262626" Background="#2F2F2F" BorderThickness="0"/>
+            <Label Grid.Column="0" Grid.RowSpan="11" Background="#2F2F2F" BorderThickness="0" />
+            <Label Grid.Row="11" Grid.ColumnSpan="8" Content="P2 Place your ships here" Foreground="White" BorderBrush="#262626" Background="#2F2F2F" BorderThickness="0"/>
             <Label Grid.Row="11" Grid.Column="8" Grid.ColumnSpan="2" Content="Ships:" Foreground="White" BorderBrush="#4C263A" Background="#5F2F49" BorderThickness="0"/>
             <Label x:Name="counter" Grid.Row="11" Grid.Column="10" Grid.ColumnSpan="1" Foreground="White" BorderBrush="#4C263A" Background="#5F2F49" BorderThickness="0"/>
         </Grid>
-        <Label Grid.Row="1" Grid.ColumnSpan="3" Background="#2F495F"/>
+        <Grid x:Name="space" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="10*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="1" Background="#2F495F" BorderBrush="#263A4C" BorderThickness="0,2,0,2" />
+        </Grid>
     </Grid>
 </Window>
