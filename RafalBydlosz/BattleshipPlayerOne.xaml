@@ -90,7 +90,7 @@
             <Label Grid.Column="0" Grid.RowSpan="11" Background="#2F2F2F" BorderThickness="0" />
             <Label Grid.Row="11" Grid.ColumnSpan="8" Content="P1 Place your ships here" Foreground="White" Background="#2F2F2F" BorderThickness="0"/>
             <Label Grid.Row="11" Grid.Column="8" Grid.ColumnSpan="2" Content="Ships:" Foreground="White"  Background="#5F2F49" BorderThickness="0"/>
-            <Label x:Name="counter" Grid.Row="11" Grid.Column="10" Grid.ColumnSpan="1" Foreground="White"  Background="#5F2F49" BorderThickness="0"/>
+            <Label x:Name="counter1" Grid.Row="11" Grid.Column="10" Grid.ColumnSpan="1" Foreground="White"  Background="#5F2F49" BorderThickness="0"/>
 
         </Grid>
         <Grid x:Name="space" Grid.Row="1">

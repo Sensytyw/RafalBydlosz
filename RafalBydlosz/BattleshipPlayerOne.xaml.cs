@@ -20,7 +20,7 @@ namespace RafalBydlosz
 			P1.DataContext = game;
 			window.DataContext = game;
 			window.Show();
-			counter.Content = 15;
+			counter1.Content = 15;
 		}
 
 		int setCounter = 0;
@@ -34,13 +34,13 @@ namespace RafalBydlosz
 				if (setCounter == 15) return;
 				((BattleshipLogic)P1.DataContext).PersonIdOne[Convert.ToInt32(btn.Tag.ToString())]++;
 				setCounter++;
-				counter.Content = 15 - setCounter;
+				counter1.Content = 15 - setCounter;
 			}
 			else if (((BattleshipLogic)P1.DataContext).PersonIdOne[Convert.ToInt32(btn.Tag.ToString())] == 1)
 			{
 				((BattleshipLogic)P1.DataContext).PersonIdOne[Convert.ToInt32(btn.Tag.ToString())]--;
 				setCounter--;
-				counter.Content = 15 - setCounter;
+				counter1.Content = 15 - setCounter;
 			}
 		}
 
@@ -194,12 +194,12 @@ namespace RafalBydlosz
 			BattleshipLogic gra = new BattleshipLogic(tab1, tab3);
 			P1.DataContext = gra;
 			window.DataContext = gra;
-			counter.Content = 15;
+			counter1.Content = 15;
 			setCounter = 0;
 			shootsHit = 0;
 			window.setCounter = 0;
 			window.shootsHit = 0;
-			window.counter.Content = 15;
+			window.counter2.Content = 15;
 		}
 
 	}

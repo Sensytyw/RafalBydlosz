@@ -13,7 +13,7 @@ namespace RafalBydlosz
 		{
 			InitializeComponent();
 			CrBtn();
-			counter.Content = 15;
+			counter2.Content = 15;
 			setCounter = 0;
 			shootsHit = 0;
 		}
@@ -31,14 +31,14 @@ namespace RafalBydlosz
 				if (setCounter == 15) return;
 				((BattleshipLogic)P1.DataContext).PersonIdTwo[Convert.ToInt32(btn.Tag.ToString())]++;
 				setCounter++;
-				counter.Content = 15 - setCounter;
+				counter2.Content = 15 - setCounter;
 			}
 
 			else if (((BattleshipLogic)P1.DataContext).PersonIdTwo[Convert.ToInt32(btn.Tag.ToString())] == 1)
 			{
 				((BattleshipLogic)P1.DataContext).PersonIdTwo[Convert.ToInt32(btn.Tag.ToString())]--;
 				setCounter--;
-				counter.Content = 15 - setCounter;
+				counter2.Content = 15 - setCounter;
 			}
 		}
 
