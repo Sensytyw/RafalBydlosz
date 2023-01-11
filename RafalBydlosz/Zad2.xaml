@@ -8,8 +8,6 @@
     Title="Zad2" Height="240" Width="460">
     <ScrollViewer HorizontalScrollBarVisibility="Auto">
         <Grid>
-    
-
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
@@ -38,10 +36,8 @@
                  HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" ></TextBox>
             </StackPanel>
             <StackPanel Grid.Column="2">
-                <Button Height="40" Width="50" VerticalAlignment="Stretch"> Dodaj</Button>
+                <Button Height="40" Width="50" VerticalAlignment="Stretch">Dodaj</Button>
             </StackPanel>
         </Grid>
     </ScrollViewer>
-
-
 </Window>

@@ -23,6 +23,7 @@ namespace RafalBydlosz
 				OnPropertyChanged("PersonId");
 			}
 		}
+
 		public ObservableCollection<int> PersonIdTwo
 		{
 			get
@@ -35,6 +36,7 @@ namespace RafalBydlosz
 				OnPropertyChanged("PersonId");
 			}
 		}
+
 		public BattleshipLogic(int[] nPersonIdOne, int[] nPersonIdTwo)
 		{
 			foreach (int _person in nPersonIdOne)
@@ -53,6 +55,7 @@ namespace RafalBydlosz
 			var handler = PropertyChanged;
 			if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
 		}
+
 		public bool CheckWin(int shootsHit)
 		{
 			if (shootsHit == 15) return true;

@@ -17,6 +17,7 @@ namespace RafalBydlosz
 			setCounter = 0;
 			shootsHit = 0;
 		}
+
 		static int[] tab = new int[100];
 		static int[] tab2 = new int[100];
 		BattleshipLogic game = new BattleshipLogic(tab, tab2);
@@ -50,10 +51,12 @@ namespace RafalBydlosz
 				((BattleshipLogic)P1.DataContext).PersonIdOne[Convert.ToInt32(btn.Tag.ToString())] += 2;
 
 			}
+
 			if (((BattleshipLogic)P1.DataContext).PersonIdOne[Convert.ToInt32(btn.Tag.ToString())] == 1)
 			{
 				((BattleshipLogic)P1.DataContext).PersonIdOne[Convert.ToInt32(btn.Tag.ToString())] += 2;
 				shootsHit++;
+
 				if (game.CheckWin(shootsHit))
 				{
 					MessageBox.Show("Player Two wins!!!");
@@ -94,6 +97,7 @@ namespace RafalBydlosz
 
 							}
 						}
+
 						break;
 					//placing  
 					case 1:
@@ -118,9 +122,9 @@ namespace RafalBydlosz
 								};
 								button.SetBinding(Button.BackgroundProperty, bind);
 								y++;
-
 							}
 						}
+
 						break;
 				}
 			}

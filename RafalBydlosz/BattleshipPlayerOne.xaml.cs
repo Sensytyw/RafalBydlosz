@@ -13,6 +13,7 @@ namespace RafalBydlosz
 		static int[] tab2 = new int[100];
 		BattleshipLogic game = new BattleshipLogic(tab, tab2);
 		BattleshipPlayerTwo window = new BattleshipPlayerTwo();
+
 		public BattleshipPlayerOne()
 		{
 			InitializeComponent();
@@ -25,6 +26,7 @@ namespace RafalBydlosz
 
 		int setCounter = 0;
 		int shootsHit = 0;
+
 		void setButton_Click(object sender, RoutedEventArgs e)
 		{
 			Button btn = (Button)sender;
@@ -36,6 +38,7 @@ namespace RafalBydlosz
 				setCounter++;
 				counter1.Content = 15 - setCounter;
 			}
+
 			else if (((BattleshipLogic)P1.DataContext).PersonIdOne[Convert.ToInt32(btn.Tag.ToString())] == 1)
 			{
 				((BattleshipLogic)P1.DataContext).PersonIdOne[Convert.ToInt32(btn.Tag.ToString())]--;
@@ -47,21 +50,25 @@ namespace RafalBydlosz
 		void shootButton_Click(object sender, RoutedEventArgs e)
 		{
 			Button btn = (Button)sender;
+
 			if (((BattleshipLogic)P1.DataContext).PersonIdTwo[Convert.ToInt32(btn.Tag.ToString())] == 0)
 			{
 				((BattleshipLogic)P1.DataContext).PersonIdTwo[Convert.ToInt32(btn.Tag.ToString())] += 2;
 
 			}
+
 			if (((BattleshipLogic)P1.DataContext).PersonIdTwo[Convert.ToInt32(btn.Tag.ToString())] == 1)
 			{
 				((BattleshipLogic)P1.DataContext).PersonIdTwo[Convert.ToInt32(btn.Tag.ToString())] += 2;
 				shootsHit++;
+
 				if (game.CheckWin(shootsHit))
 				{
 					MessageBox.Show("Player One wins!");
 				};
 			}
 		}
+
 		private void CrBtn()
 		{
 			int x = 0;
@@ -95,6 +102,7 @@ namespace RafalBydlosz
 
 							}
 						}
+
 						break;
 					//placing
 					case 1:
@@ -121,10 +129,10 @@ namespace RafalBydlosz
 
 							}
 						}
+
 						break;
 				}
 			}
-
 
 		}
 		public class YesNoToBooleanConverter : IValueConverter
@@ -142,6 +150,7 @@ namespace RafalBydlosz
 					case 0:
 						return new SolidColorBrush(Colors.Transparent);
 				}
+
 				return false;
 			}
 
@@ -154,9 +163,11 @@ namespace RafalBydlosz
 					//else
 					//    return 0;
 				}
+
 				return 0;
 			}
 		}
+
 		public class YesNoToBooleanConverter2 : IValueConverter
 		{
 			public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
@@ -172,8 +183,10 @@ namespace RafalBydlosz
 					case 0:
 						return new SolidColorBrush(Colors.Transparent);
 				}
+
 				return false;
 			}
+
 			public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 			{
 				// if (value is Colors)
@@ -183,6 +196,7 @@ namespace RafalBydlosz
 					//else
 					//    return 0;
 				}
+
 				return 0;
 			}
 		}
@@ -201,6 +215,5 @@ namespace RafalBydlosz
 			window.shootsHit = 0;
 			window.counter2.Content = 15;
 		}
-
 	}
 }

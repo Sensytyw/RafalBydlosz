@@ -26,6 +26,7 @@ namespace RafalBydlosz
 				CurrentPlayer = X;
 			}
 		}
+
 		public bool PlayerWin()
 		{
 			for(var i=0; i < 3; i++)
@@ -49,7 +50,6 @@ namespace RafalBydlosz
 					}
 				}
 			}
-
 			
 				if (!String.IsNullOrWhiteSpace(Board[1, 1]))
 				{
@@ -57,21 +57,19 @@ namespace RafalBydlosz
 					{
 						return true;
 					}
+
 				if (Board[0, 2] == Board[1, 1] && Board[1, 1] == Board[2, 0])
 				{
 					return true;
 				}
 			}
 
-
-
-
 			return false;
 		}
+
 		internal void UpdateBoard(Position position, string value)
 		{
 			Board[position.x, position.y] = value;
 		}
-
 	}
 }

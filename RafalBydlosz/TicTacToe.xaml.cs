@@ -1,16 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace RafalBydlosz
 {
@@ -19,12 +9,12 @@ namespace RafalBydlosz
 	/// </summary>
 	public partial class TicTacToe : Window
 	{
+		GameLogic _GameLogic = new GameLogic();
+
 		public TicTacToe()
 		{
 			InitializeComponent();
 		}
-
-		GameLogic _GameLogic = new GameLogic();
 
 		private void XO_Button_Click(object sender, RoutedEventArgs e)
 		{
@@ -46,7 +36,6 @@ namespace RafalBydlosz
 				WinScreen.Visibility = Visibility.Visible;
 			}
 
-
 			_GameLogic.SetNextPlayer();
 		}
 
@@ -59,9 +48,9 @@ namespace RafalBydlosz
 					((Button)control).Content = String.Empty;
 				}
 			}
+
 			_GameLogic = new GameLogic();
 			WinScreen.Visibility = Visibility.Collapsed;
-
 		}
 	}
 }
