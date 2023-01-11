@@ -3,11 +3,11 @@
 namespace RafalBydlosz
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Interaction logic for Zad2.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class Zad2 : Window
 	{
-		public MainWindow()
+		public Zad2()
 		{
 			InitializeComponent();
 		}
