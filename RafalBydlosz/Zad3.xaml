@@ -8,15 +8,15 @@
         Title="Zad3" Height="450" Width="450">
     <Grid>
         <DockPanel>
-            <Button  DockPanel.Dock="Bottom">Bottom</Button>
-            <Button DockPanel.Dock="Left">Left</Button>
-            <Button DockPanel.Dock="Right">Right</Button>
-            <Button Background="Red" Height="100" DockPanel.Dock="Top">Top</Button>
-            <Button Background="Green" Width="170" Height="150" DockPanel.Dock="Top">Top2</Button>
-            <Button Height="70"  DockPanel.Dock="Right">Right2</Button>
-            <Button Height="70"  DockPanel.Dock="Right">Right3</Button>
-            <Button Background="Blue" Height="80"   DockPanel.Dock="Top">Top3</Button>
-            <Button DockPanel.Dock="Top">Fill</Button>
+            <Button  DockPanel.Dock="Bottom" Content="Button"/>
+            <Button DockPanel.Dock="Left" Content="Left"/>
+            <Button DockPanel.Dock="Right" Content="Right"/>
+            <Button Background="Red" Height="100" DockPanel.Dock="Top" Content="Top"/>
+            <Button Background="Green" Width="170" Height="150" DockPanel.Dock="Top" Content="Top2"/>
+            <Button Height="70"  DockPanel.Dock="Right" Content="Right2"/>
+            <Button Height="70"  DockPanel.Dock="Right" Content="Right3"/>
+            <Button Background="Blue" Height="80"   DockPanel.Dock="Top" Content="Top3"/>
+            <Button DockPanel.Dock="Top" Content="Fill"/>
         </DockPanel>
     </Grid>
 </Window>
