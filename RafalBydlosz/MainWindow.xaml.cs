@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace RafalBydlosz
 {
@@ -91,6 +92,11 @@ namespace RafalBydlosz
 			first = float.Parse(ResultText.Text);
 			op = '/';
 			ResultText.Clear();
+		}
+
+		private void ResultText_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+		{
+
 		}
 	}
 }
