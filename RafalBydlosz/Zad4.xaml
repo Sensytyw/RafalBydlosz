@@ -7,12 +7,14 @@
         mc:Ignorable="d"
         Title="Zad4" Height="300" Width="800">
     <Canvas>
-        <Button FontSize="20" Canvas.Left="30" Canvas.Top="50" Content="Dad Granddad"/>
-        <Button FontSize="20" Canvas.Left="200" Canvas.Top="50" Content="Dad Grandmom"/>
-        <Button FontSize="20" Canvas.Right="30" Canvas.Top="50" Content="Mom Granddad"/>
-        <Button FontSize="20" Canvas.Right="200" Canvas.Top="50" Content="Mom Granmom"/>
-        <Button FontSize="20" Canvas.Right="150" Canvas.Top="120" Content="Mom"/>
-        <Button FontSize="20" Canvas.Left="150" Canvas.Top="120" Content="Dad"/>
-        <Button FontSize="20" Canvas.Right="380" Canvas.Top="170" Content="Me"/>
+
+        <Button FontSize="20" Canvas.Left="30" Canvas.Top="50" Content="Dad Grandad" />
+        <Button FontSize="20" Canvas.Left="200" Canvas.Top="50" Content="Dad Grandmom" />
+        <Button FontSize="20" Canvas.Right="30" Canvas.Top="50" Content="Mom Grandad" />
+        <Button FontSize="20" Canvas.Right="200" Canvas.Top="50" Content="Mom Grandmom" />
+        <Button FontSize="20" Canvas.Right="150" Canvas.Top="120" Content="Mom" />
+        <Button FontSize="20" Canvas.Left="150" Canvas.Top="120" Content="Dad" />
+        <Button FontSize="20" Canvas.Right="380" Canvas.Top="170" Content="Me" />
+
     </Canvas>
 </Window>

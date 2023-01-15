@@ -13,17 +13,17 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-
             <StackPanel Grid.Column="0">
                 <Label Height="40" Width="185" HorizontalAlignment="Left"
                  HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" Content="Imie" />
                 <Label Height="40" Width="185" HorizontalAlignment="Left"
                  HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" Content="Nazwisko" />
                 <Label Height="40" Width="185" HorizontalAlignment="Left"
-                 HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" Content="Data urodzenia"/>
-                <Label Height="40" Width="185" HorizontalAlignment="Left"
-                 HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" Content="Numer semestru"/>
 
+                 HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" Content="Data urodzenia" />
+                <Label Height="40" Width="185" HorizontalAlignment="Left"
+                 HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" Content="nr semestru" />
+                 
             </StackPanel>
             <StackPanel Grid.Column="1">
                 <TextBox Height="40" Width="185" HorizontalAlignment="Left"
@@ -36,7 +36,9 @@
                  HorizontalContentAlignment="Left" FontSize="24" FontFamily="Gothic Century" />
             </StackPanel>
             <StackPanel Grid.Column="2">
-                <Button Height="40" Width="50" VerticalAlignment="Stretch" Content="Dodaj"/>
+
+                <Button Height="40" Width="50" VerticalAlignment="Stretch" Content="Dodaj" />
+
             </StackPanel>
         </Grid>
     </ScrollViewer>
