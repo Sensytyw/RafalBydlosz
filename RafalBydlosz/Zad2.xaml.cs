@@ -7,6 +7,7 @@ namespace RafalBydlosz
 	/// </summary>
 	public partial class Zad2 : Window
 	{
+
 		public Zad2()
 		{
 			InitializeComponent();

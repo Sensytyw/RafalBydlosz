@@ -8,6 +8,7 @@
         Title="Zad3" Height="450" Width="450">
     <Grid>
         <DockPanel>
+
             <Button  DockPanel.Dock="Bottom" Content="Bottom" />
             <Button DockPanel.Dock="Left" Content="Left" />
             <Button DockPanel.Dock="Right" Content="Right" />
@@ -17,6 +18,7 @@
             <Button Height="70"  DockPanel.Dock="Right" Content="Right3" />
             <Button Background="Blue" Height="80"   DockPanel.Dock="Top" Content="Top3" />
             <Button DockPanel.Dock="Top" Content="Fill" />
+
         </DockPanel>
     </Grid>
 </Window>
