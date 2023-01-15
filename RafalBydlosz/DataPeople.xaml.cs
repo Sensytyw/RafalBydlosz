@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,10 +25,18 @@ namespace RafalBydlosz
 		public DataPeople()
 		{
 			InitializeComponent();
-			listOfPeoples.Add(new People("aaaa", "bbbb", "123456789"));
-			listOfPeoples.Add(new People("aaaa", "bbbb", "123456789"));
-			listOfPeoples.Add(new People("aaaa", "bbbb", "123456789"));
-			dataGridPeople.ItemsSource = listOfPeoples;
+			if (File.Exists("C:\\Users\\Rafal\\Desktop\\Serializacja\\test.xml"))
+			{
+				listOfPeoples = Serialization.DeserializeToObject<List<People>>("C:\\Users\\Rafal\\Desktop\\Serializacja\\test.xml");
+			}
+
+			else
+			{
+				listOfPeoples.Add(new People("aaaa", "bbbb", "123456789"));
+				listOfPeoples.Add(new People("aaaa", "bbbb", "123456789"));
+				listOfPeoples.Add(new People("aaaa", "bbbb", "123456789"));
+				dataGridPeople.ItemsSource = listOfPeoples;
+			}
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
@@ -58,6 +67,10 @@ namespace RafalBydlosz
 					dataGridPeople.Items.Refresh();
 				}
 			}
+		}
+		private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+		{
+			Serialization.SerializeToXml<List<People>>(listOfPeoples, "C:\\Users\\Rafal\\Desktop\\Serializacja\\test.xml");
 		}
 	}
 }

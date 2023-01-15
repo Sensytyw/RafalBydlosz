@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RafalBydlosz"
         mc:Ignorable="d"
-        Title="DataAdd" Height="450" Width="800">
+        Title="DataAdd" Height="450" Width="800" Background="#9D7664">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -18,15 +18,26 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Label FontSize="32" FontFamily="Century Gothic" VerticalAlignment="Center"
-               HorizontalAlignment="Right" Content="Imie:"/>
+               HorizontalAlignment="Right" Content="Imie:"
+               Background="Transparent" Foreground="#F1EDEA"/>
         <Label Grid.Row="1" FontSize="32" FontFamily="Century Gothic"
-               VerticalAlignment="Center" HorizontalAlignment="Right" Content="Nazwisko:"/>
+               VerticalAlignment="Center" HorizontalAlignment="Right"
+               Background="Transparent" Content="Nazwisko:" Foreground="#F1EDEA"/>
         <Label Grid.Row="2" FontSize="32" FontFamily="Century Gothic"
-               VerticalAlignment="Center" HorizontalAlignment="Right" Content="Pesel:"/>
-        <TextBox Grid.Column="1" Text="{Binding name, Mode=TwoWay}"/>
-        <TextBox Grid.Column="1" Grid.Row="1" Text="{Binding surName, Mode=TwoWay}"/>
-        <TextBox Grid.Column="1" Grid.Row="2" Text="{Binding pesel, Mode=TwoWay}"/>
-        <Button Content="Zatwierdź" Grid.Row="3" Click="Button_Click" />
-        <Button Content="Anuluj" Grid.Row="3" Grid.Column="1" Click="Button_Click_1" />
+               VerticalAlignment="Center" HorizontalAlignment="Right"
+               Background="Transparent" Content="Pesel:" Foreground="#F1EDEA"/>
+        <TextBox Grid.Column="1" FontFamily="Century Gothic" FontSize="32"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                 Text="{Binding name, Mode=TwoWay}"/>
+        <TextBox Grid.Column="1" Grid.Row="1" FontFamily="Century Gothic" FontSize="32" 
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                 Text="{Binding surName, Mode=TwoWay}"/>
+        <TextBox Grid.Column="1" Grid.Row="2" FontFamily="Century Gothic" FontSize="32"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                 Text="{Binding pesel, Mode=TwoWay}"/>
+        <Button Content="Zatwierdź" Grid.Row="3" Click="Button_Click"
+                FontFamily="Century Gothic" FontSize="36" Foreground="#EDF1EA" Background="#769D64"/>
+        <Button Content="Anuluj" Grid.Row="3" Grid.Column="1" Click="Button_Click_1"
+                FontFamily="Century Gothic" FontSize="36" Foreground="White" Background="#9D6476"/>
     </Grid>
 </Window>
