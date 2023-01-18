@@ -38,7 +38,8 @@ namespace Library
 				this.id = book.id;
 				this.name = book.name;
 				this.number = book.number;
-			}
+				this.genre = book.genre;
+		}
 
 		
 

@@ -14,12 +14,12 @@ namespace Library
 		public OrderBooks()
 		{
 			InitializeComponent();
-			if (File.Exists("test.xml"))
-			{
-				listOfBooks = SerializationBooks.DeserializeToObject<List<Books>>("test.xml");
-			}
+			//if (File.Exists("test.xml"))
+			//{
+			//	listOfBooks = SerializationBooks.DeserializeToObject<List<Books>>("test.xml");
+			//}
 
-			else
+			//else
 			{
 				listOfBooks.Add(new Books("1", "Great Shark", "1234567891", "Adventure"));
 				listOfBooks.Add(new Books("2", "Big Thumb", "2314567981", "Comdey"));
