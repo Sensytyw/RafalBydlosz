@@ -25,7 +25,7 @@ namespace Library
 			{
 
 			}
-			public Books(string id, string name, string number, string gendre)
+			public Books(string id, string name, string number, string genre)
 			{
 				this.id = id;
 				this.name = name;
