@@ -32,9 +32,9 @@ namespace RafalBydlosz
 
 			else
 			{
-				listOfPeoples.Add(new People("aaaa", "bbbb", "123456789"));
-				listOfPeoples.Add(new People("aaaa", "bbbb", "123456789"));
-				listOfPeoples.Add(new People("aaaa", "bbbb", "123456789"));
+				listOfPeoples.Add(new People("Jan", "Nowak", "1234567891"));
+				listOfPeoples.Add(new People("Andrzej", "Kowalczuk", "2314567981"));
+				listOfPeoples.Add(new People("Mariusz", "Brun", "2068931230"));
 				dataGridPeople.ItemsSource = listOfPeoples;
 			}
 		}
