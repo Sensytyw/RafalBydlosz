@@ -10,19 +10,31 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Library
 {
 	/// <summary>
-	/// Interaction logic for MainWindow.xaml
+	/// Interaction logic for AddBooks.xaml
 	/// </summary>
-	public partial class MainWindow : Window
+	public partial class AddBooks : Window
 	{
-		public MainWindow()
+		public bool IsOkPressed { get; set; }
+		public AddBooks()
 		{
 			InitializeComponent();
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			IsOkPressed = true;
+			this.Close();
+		}
+
+		private void Button_Click_1(object sender, RoutedEventArgs e)
+		{
+			IsOkPressed = false;
+			this.Close();
 		}
 	}
 }

@@ -1,0 +1,50 @@
+﻿<Window x:Class="Library.AddBooks"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        Title="FoundBook" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label FontSize="32" FontFamily="Century Gothic" VerticalAlignment="Center"
+               HorizontalAlignment="Right" Content="Id:"
+               Background="Transparent" Foreground="#F1EDEA"/>
+        <Label Grid.Row="1" FontSize="32" FontFamily="Century Gothic"
+               VerticalAlignment="Center" HorizontalAlignment="Right"
+               Background="Transparent" Content="Name:" Foreground="#F1EDEA"/>
+        <Label Grid.Row="2" FontSize="32" FontFamily="Century Gothic"
+               VerticalAlignment="Center" HorizontalAlignment="Right"
+               Background="Transparent" Content="Number:" Foreground="#F1EDEA"/>
+        <Label Grid.Row="3" FontSize="32" FontFamily="Century Gothic"
+               VerticalAlignment="Center" HorizontalAlignment="Right"
+               Background="Transparent" Content="Genre:" Foreground="#F1EDEA"/>
+        <TextBox Grid.Column="1" FontFamily="Century Gothic" FontSize="32"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                 Text="{Binding id, Mode=TwoWay}"/>
+        <TextBox Grid.Column="1" Grid.Row="1" FontFamily="Century Gothic" FontSize="32" 
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                 Text="{Binding name, Mode=TwoWay}"/>
+        <TextBox Grid.Column="1" Grid.Row="2" FontFamily="Century Gothic" FontSize="32"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                 Text="{Binding number, Mode=TwoWay}"/>
+        <TextBox Grid.Column="1" Grid.Row="3" FontFamily="Century Gothic" FontSize="32"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                 Text="{Binding genre, Mode=TwoWay}"/>
+        <Button Content="Zamów" Grid.Row="4" Click="Button_Click"
+                FontFamily="Century Gothic" FontSize="36" Foreground="#EDF1EA" Background="#769D64"/>
+        <Button Content="Anuluj" Grid.Row="4" Grid.Column="1" Click="Button_Click_1"
+                FontFamily="Century Gothic" FontSize="36" Foreground="White" Background="#9D6476"/>
+    </Grid>
+</Window>
