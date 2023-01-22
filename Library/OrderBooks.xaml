@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="Library" Height="450" Width="800" Closing="Window_Closing" Icon="/Book.png" >
+        Title="Library" Height="450" Width="800" Icon="/Book.png" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -22,19 +22,19 @@
         <DataGrid x:Name="dataGridBooks" Grid.ColumnSpan="4" Grid.RowSpan="2" Margin="-4,0,4,0"
                 FontFamily="Century Gothic" />
 
-        <Button Click="Button_Click" Grid.Row="2" Content="Add"
+        <Button x:Name="AddBtn"  Click="Button_Click" Grid.Row="2" Content="Add"
                 Background="#5E7E5E" FontFamily="Century Gothic"
                 FontSize="32" Foreground="#E9EDE9"
                 BorderThickness="0,4,0,0" BorderBrush="#4B654B"/>
-        <Button Grid.Row="2" Grid.Column="2" Click="Button_Click_1" Content="Edit"
+        <Button x:Name="EditBtn"  Grid.Row="2" Grid.Column="2" Click="Button_Click_1" Content="Edit"
                     Background="#584B65" FontFamily="Century Gothic"
                 FontSize="32" Foreground="#EDE9ED"
                     BorderThickness="0,4,0,0" BorderBrush="#463C51"/>
-        <Button Click="Button_Click_2" Grid.Column="1" Grid.Row="2" Content="Remove"
+        <Button x:Name="RemoveBtn" Click="Button_Click_2" Grid.Column="1" Grid.Row="2" Content="Remove"
                 Background="#7E5E7E" FontFamily="Century Gothic"
                 FontSize="32" Foreground="#E9EDE9"
                 BorderThickness="0,4,0,0" BorderBrush="#654B65"/>
-        <Button Click="Button_Click_3" Grid.Column="3" Grid.Row="2" Content="Clear"
+        <Button x:Name="ClearBtn" Click="Button_Click_3" Grid.Column="3" Grid.Row="2" Content="Clear"
                 Background="#654B4B" FontFamily="Century Gothic"
                 FontSize="32" Foreground="#E9EDE9"
                 BorderThickness="0,4,0,0" BorderBrush="#513C3C"/>

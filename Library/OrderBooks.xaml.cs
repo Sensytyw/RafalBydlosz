@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Windows;
 using System.IO;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Library
 {
@@ -14,18 +16,19 @@ namespace Library
 		public OrderBooks()
 		{
 			InitializeComponent();
-			//if (File.Exists("test.xml"))
-			//{
-			//	listOfBooks = SerializationBooks.DeserializeToObject<List<Books>>("test.xml");
-			//}
+			LoadGrid();
+		}
+		SqlConnection con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=LibraryProject;Integrated Security=True");
 
-			//else
-			{
-				listOfBooks.Add(new Books("1", "Great Shark", "1234567891", "Adventure"));
-				listOfBooks.Add(new Books("2", "Big Thumb", "2314567981", "Comdey"));
-				listOfBooks.Add(new Books("3", "New Orlean", "2068931230", "Drama"));
-				dataGridBooks.ItemsSource = listOfBooks;
-			}
+		public void LoadGrid()
+		{
+			SqlCommand cmd = new SqlCommand("select * from Books", con);
+			DataTable dt = new DataTable();
+			con.Open();
+			SqlDataReader sdr = cmd.ExecuteReader();
+			dt.Load(sdr);
+			con.Close();
+			dataGridBooks.ItemsSource = dt.DefaultView;
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
@@ -56,11 +59,6 @@ namespace Library
 					dataGridBooks.Items.Refresh();
 				}
 			}
-		}
-
-		private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-		{
-			SerializationBooks.SerializeToXml<List<Books>>(listOfBooks, "test.xml");
 		}
 
 		private void Button_Click_2(object sender, RoutedEventArgs e)

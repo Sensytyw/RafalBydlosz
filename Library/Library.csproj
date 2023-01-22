@@ -10,6 +10,7 @@
   <ItemGroup>
     <None Remove="Book.png" />
     <None Remove="Book64Add.png" />
+    <None Remove="images\BookMuchBigger.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +20,7 @@
   <ItemGroup>
     <Resource Include="Book.png" />
     <Resource Include="Book64Add.png" />
+    <Resource Include="images\BookMuchBigger.png" />
   </ItemGroup>
 
 </Project>

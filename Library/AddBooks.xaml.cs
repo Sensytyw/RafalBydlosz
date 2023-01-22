@@ -25,6 +25,15 @@ namespace Library
 			InitializeComponent();
 		}
 
+		public void clearData()
+		{
+			name_txt.Clear();
+			genre_txt.Clear();
+			cover_txt.Clear();
+			language_txt.Clear();
+			type_txt.Clear();
+			date_txt.Clear();
+		}
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
 			IsOkPressed = true;
