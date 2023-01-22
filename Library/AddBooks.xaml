@@ -38,25 +38,19 @@
                Background="Transparent" Content="Type:" Foreground="#F1EDEA"/>
         <Label Grid.Row="5" FontSize="32" FontFamily="Century Gothic"
                VerticalAlignment="Center" HorizontalAlignment="Right"
-               Background="Transparent" Content="Cover:" Foreground="#F1EDEA"/>
+               Background="Transparent" Content="Date:" Foreground="#F1EDEA"/>
         <TextBox Grid.ColumnSpan="2" x:Name="name_txt" Grid.Column="1" FontFamily="Century Gothic" FontSize="32"
-                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
-                 Text="{Binding id, Mode=TwoWay}"/>
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         <TextBox Grid.ColumnSpan="2" x:Name="genre_txt" Grid.Column="1" Grid.Row="1" FontFamily="Century Gothic" FontSize="32" 
-                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
-                 Text="{Binding name, Mode=TwoWay}"/>
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         <TextBox Grid.ColumnSpan="2" x:Name="cover_txt" Grid.Column="1" Grid.Row="2" FontFamily="Century Gothic" FontSize="32"
-                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
-                 Text="{Binding number, Mode=TwoWay}"/>
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         <TextBox Grid.ColumnSpan="2" x:Name="language_txt" Grid.Column="1" Grid.Row="3" FontFamily="Century Gothic" FontSize="32"
-                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
-                 Text="{Binding genre, Mode=TwoWay}"/>
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         <TextBox Grid.ColumnSpan="2" x:Name="type_txt" Grid.Column="1" Grid.Row="4" FontFamily="Century Gothic" FontSize="32"
-                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
-                 Text="{Binding genre, Mode=TwoWay}"/>
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         <TextBox Grid.ColumnSpan="2" x:Name="date_txt" Grid.Column="1" Grid.Row="5" FontFamily="Century Gothic" FontSize="32"
-                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
-                 Text="{Binding genre, Mode=TwoWay}"/>
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         <Button Content="Confirm" Grid.Row="6" Click="Button_Click"
                 FontFamily="Century Gothic" FontSize="36" Foreground="#EDF1EA" Background="#769D64"/>
         <Button Content="Cancel" Grid.Row="6" Grid.Column="1" Click="Button_Click_1"

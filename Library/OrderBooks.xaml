@@ -11,7 +11,6 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -19,7 +18,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DataGrid x:Name="dataGridBooks" Grid.ColumnSpan="4" Grid.RowSpan="2" Margin="-4,0,4,0"
+        <DataGrid x:Name="dataGridBooks" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="-4,0,4,0"
                 FontFamily="Century Gothic" />
 
         <Button x:Name="AddBtn"  Click="Button_Click" Grid.Row="2" Content="Add"
@@ -34,9 +33,5 @@
                 Background="#7E5E7E" FontFamily="Century Gothic"
                 FontSize="32" Foreground="#E9EDE9"
                 BorderThickness="0,4,0,0" BorderBrush="#654B65"/>
-        <Button x:Name="ClearBtn" Click="Button_Click_3" Grid.Column="3" Grid.Row="2" Content="Clear"
-                Background="#654B4B" FontFamily="Century Gothic"
-                FontSize="32" Foreground="#E9EDE9"
-                BorderThickness="0,4,0,0" BorderBrush="#513C3C"/>
     </Grid>
 </Window>

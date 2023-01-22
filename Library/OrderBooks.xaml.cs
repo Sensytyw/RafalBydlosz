@@ -3,6 +3,7 @@ using System.Windows;
 using System.IO;
 using System.Data.SqlClient;
 using System.Data;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Library
 {
@@ -18,16 +19,19 @@ namespace Library
 			InitializeComponent();
 			LoadGrid();
 		}
-		SqlConnection con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=LibraryProject;Integrated Security=True");
+		public static class Globals
+			{
+				public static SqlConnection con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=LibraryProject;Integrated Security=True");
+			}
 
 		public void LoadGrid()
 		{
-			SqlCommand cmd = new SqlCommand("select * from Books", con);
+			SqlCommand cmd = new SqlCommand("select * from Books", Globals.con);
 			DataTable dt = new DataTable();
-			con.Open();
+			Globals.con.Open();
 			SqlDataReader sdr = cmd.ExecuteReader();
 			dt.Load(sdr);
-			con.Close();
+			Globals.con.Close();
 			dataGridBooks.ItemsSource = dt.DefaultView;
 		}
 
@@ -66,9 +70,5 @@ namespace Library
 
 		}
 
-		private void Button_Click_3(object sender, RoutedEventArgs e)
-		{
-
-		}
 	}
 }
