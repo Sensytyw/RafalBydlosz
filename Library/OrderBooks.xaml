@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="Library" Height="450" Width="800" Icon="/Book.png" >
+        Title="Library" Height="450" Width="800" Icon="/Book.png" Background="#2B2B2B" >
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -18,18 +19,20 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DataGrid x:Name="dataGridBooks" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="-4,0,4,0"
+        <DataGrid x:Name="dataGridBooks" Grid.ColumnSpan="4" Margin="-4,0,4,0"
                 FontFamily="Century Gothic" />
 
-        <Button x:Name="AddBtn"  Click="Button_Click" Grid.Row="2" Content="Add"
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="Insert ID of book you want to remove:" Margin="10" FontSize="24" VerticalAlignment="Center" TextAlignment="Right" TextWrapping="Wrap" Foreground="#E9EDE9"/>
+        <TextBox x:Name="remove_row" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="24"/>
+        <Button x:Name="AddBtn"  Click="ButtonAdd" Grid.Row="2" Grid.ColumnSpan="2" Content="Add"
                 Background="#5E7E5E" FontFamily="Century Gothic"
                 FontSize="32" Foreground="#E9EDE9"
                 BorderThickness="0,4,0,0" BorderBrush="#4B654B"/>
-        <Button x:Name="EditBtn"  Grid.Row="2" Grid.Column="2" Click="Button_Click_1" Content="Edit"
+        <Button x:Name="EditBtn"  Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Click="ButtonEddit" Content="Edit"
                     Background="#584B65" FontFamily="Century Gothic"
                 FontSize="32" Foreground="#EDE9ED"
                     BorderThickness="0,4,0,0" BorderBrush="#463C51"/>
-        <Button x:Name="RemoveBtn" Click="Button_Click_2" Grid.Column="1" Grid.Row="2" Content="Remove"
+        <Button x:Name="RemoveBtn" Click="ButtonRemove" Grid.Column="3" Grid.Row="1" Content="Remove"
                 Background="#7E5E7E" FontFamily="Century Gothic"
                 FontSize="32" Foreground="#E9EDE9"
                 BorderThickness="0,4,0,0" BorderBrush="#654B65"/>

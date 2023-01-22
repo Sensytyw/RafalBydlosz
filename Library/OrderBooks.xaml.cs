@@ -35,7 +35,7 @@ namespace Library
 			dataGridBooks.ItemsSource = dt.DefaultView;
 		}
 
-		private void Button_Click(object sender, RoutedEventArgs e)
+		private void ButtonAdd(object sender, RoutedEventArgs e)
 		{
 			AddBooks okno = new AddBooks();
 			Books ksiazka = new Books();
@@ -48,8 +48,35 @@ namespace Library
 			}
 		}
 
-		private void Button_Click_1(object sender, RoutedEventArgs e)
+		private void ButtonEddit(object sender, RoutedEventArgs e)
 		{
+			AddBooks ab = new AddBooks();
+			Globals.con.Open();
+			SqlCommand cmd = new SqlCommand("update Books set Name= '"+ ab.name_txt.Text + "'," +
+				"Genre= '"+ ab.genre_txt.Text + "',Cover= '"+ ab.cover_txt.Text + "'" +
+				",Language= '"+ ab.language_txt.Text + "',Type= '"+ ab.type_txt.Text + "'", Globals.con);
+			try
+			{
+				cmd.ExecuteNonQuery();
+				MessageBox.Show("Record has been Edited successfully", "Edited", MessageBoxButton.OK, MessageBoxImage.Information);
+				Globals.con.Close();
+				AddBooks addBooks = new AddBooks();
+				addBooks.clearData();
+				LoadGrid();
+				Globals.con.Close();
+
+			}
+			catch (SqlException ex)
+			{
+				MessageBox.Show("Not edited" + ex.Message);
+			}
+			finally
+			{
+				Globals.con.Close();
+				ab.clearData();
+				LoadGrid();
+			}
+
 			if (dataGridBooks.SelectedItem != null)
 			{
 				AddBooks okno = new AddBooks();
@@ -65,9 +92,29 @@ namespace Library
 			}
 		}
 
-		private void Button_Click_2(object sender, RoutedEventArgs e)
+		private void ButtonRemove(object sender, RoutedEventArgs e)
 		{
+			Globals.con.Open();
+			SqlCommand cmd = new SqlCommand("delete from Books where BookId =" + remove_row.Text + " ", Globals.con);
+			try 
+			{ 
+				cmd.ExecuteNonQuery();
+				MessageBox.Show("Record has been removed","Removed", MessageBoxButton.OK, MessageBoxImage.Information);
+				Globals.con.Close();
+				AddBooks addBooks = new AddBooks();
+				addBooks.clearData();
+				LoadGrid();
+				Globals.con.Close();
 
+			}
+			catch (SqlException ex)
+			{
+				MessageBox.Show("Not removed" + ex.Message);
+			}
+			finally
+			{
+				Globals.con.Close();
+			}
 		}
 
 	}

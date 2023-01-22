@@ -71,9 +71,11 @@ namespace Library
 			cover_txt.Clear();
 			language_txt.Clear();
 			type_txt.Clear();
+			OrderBooks orderBooks= new OrderBooks();
+			orderBooks.remove_row.Clear();
 		}
 
-		private void Button_Click(object sender, RoutedEventArgs e)
+		private void Button_Confirm(object sender, RoutedEventArgs e)
 		{
 			try
 			{
@@ -104,13 +106,13 @@ namespace Library
 			this.Close();
 		}
 
-		private void Button_Click_1(object sender, RoutedEventArgs e)
+		private void Button_Cancel(object sender, RoutedEventArgs e)
 		{
 			IsOkPressed = false;
 			this.Close();
 		}
 
-		private void Button_Click_2(object sender, RoutedEventArgs e)
+		private void Button_Clear(object sender, RoutedEventArgs e)
 		{
 			clearData();
 		}
