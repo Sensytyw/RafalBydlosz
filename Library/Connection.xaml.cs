@@ -26,14 +26,14 @@ namespace Library
 			SqlCommand command;
 			SqlDataAdapter adapter = new SqlDataAdapter();
 			SqlDataReader dataReader;
-			String sql,sql2, Output = "";
+			String sqlSelect,/*sqlInsert, sqlUpdate, sqlDelete,*/ Output = "";
 
-			sql2 = "Insert into Books (BookId,Name) values(1, ' " + "Witcher" + "')";
-			sql = "Select BookId, Name from Books";
-			command = new SqlCommand(sql, cnn);
+			//sqlInsert = "Insert into Books (BookId,Name) values(2, ' " + "Witcher" + "')";
+			sqlSelect = "Select BookId, Name from Books";
+			command = new SqlCommand(sqlSelect, cnn);
 
-			adapter.InsertCommand = new SqlCommand(sql2, cnn);
-			adapter.InsertCommand.ExecuteNonQuery();
+			//adapter.InsertCommand = new SqlCommand(sql2, cnn);
+			//adapter.InsertCommand.ExecuteNonQuery();
 
 			dataReader = command.ExecuteReader();
 

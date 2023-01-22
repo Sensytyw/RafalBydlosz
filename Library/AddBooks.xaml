@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="FoundBook" Height="450" Width="800">
+                Title="FoundBook" Height="450" Width="800" Background="#2B2B2B" Icon="/Book64Add.png">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -17,34 +17,49 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Label FontSize="32" FontFamily="Century Gothic" VerticalAlignment="Center"
-               HorizontalAlignment="Right" Content="Id:"
+               HorizontalAlignment="Right" Content="Name:"
                Background="Transparent" Foreground="#F1EDEA"/>
         <Label Grid.Row="1" FontSize="32" FontFamily="Century Gothic"
                VerticalAlignment="Center" HorizontalAlignment="Right"
-               Background="Transparent" Content="Name:" Foreground="#F1EDEA"/>
+               Background="Transparent" Content="Genre:" Foreground="#F1EDEA"/>
         <Label Grid.Row="2" FontSize="32" FontFamily="Century Gothic"
                VerticalAlignment="Center" HorizontalAlignment="Right"
-               Background="Transparent" Content="Number:" Foreground="#F1EDEA"/>
+               Background="Transparent" Content="Cover:" Foreground="#F1EDEA"/>
         <Label Grid.Row="3" FontSize="32" FontFamily="Century Gothic"
                VerticalAlignment="Center" HorizontalAlignment="Right"
-               Background="Transparent" Content="Genre:" Foreground="#F1EDEA"/>
-        <TextBox Grid.Column="1" FontFamily="Century Gothic" FontSize="32"
+               Background="Transparent" Content="Language:" Foreground="#F1EDEA"/>
+        <Label Grid.Row="4" FontSize="32" FontFamily="Century Gothic"
+               VerticalAlignment="Center" HorizontalAlignment="Right"
+               Background="Transparent" Content="Type:" Foreground="#F1EDEA"/>
+        <Label Grid.Row="5" FontSize="32" FontFamily="Century Gothic"
+               VerticalAlignment="Center" HorizontalAlignment="Right"
+               Background="Transparent" Content="Cover:" Foreground="#F1EDEA"/>
+        <TextBox x:Name="name_txt" Grid.Column="1" FontFamily="Century Gothic" FontSize="32"
                  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
                  Text="{Binding id, Mode=TwoWay}"/>
-        <TextBox Grid.Column="1" Grid.Row="1" FontFamily="Century Gothic" FontSize="32" 
+        <TextBox x:Name="genre_txt" Grid.Column="1" Grid.Row="1" FontFamily="Century Gothic" FontSize="32" 
                  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
                  Text="{Binding name, Mode=TwoWay}"/>
-        <TextBox Grid.Column="1" Grid.Row="2" FontFamily="Century Gothic" FontSize="32"
+        <TextBox x:Name="cover_txt" Grid.Column="1" Grid.Row="2" FontFamily="Century Gothic" FontSize="32"
                  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
                  Text="{Binding number, Mode=TwoWay}"/>
-        <TextBox Grid.Column="1" Grid.Row="3" FontFamily="Century Gothic" FontSize="32"
+        <TextBox x:Name="language_txt" Grid.Column="1" Grid.Row="3" FontFamily="Century Gothic" FontSize="32"
                  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
                  Text="{Binding genre, Mode=TwoWay}"/>
-        <Button Content="Zamów" Grid.Row="4" Click="Button_Click"
+        <TextBox x:Name="type_txt" Grid.Column="1" Grid.Row="4" FontFamily="Century Gothic" FontSize="32"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                 Text="{Binding genre, Mode=TwoWay}"/>
+        <TextBox x:Name="date_txt" Grid.Column="1" Grid.Row="5" FontFamily="Century Gothic" FontSize="32"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"
+                 Text="{Binding genre, Mode=TwoWay}"/>
+        <Button Content="Confirm" Grid.Row="6" Click="Button_Click"
                 FontFamily="Century Gothic" FontSize="36" Foreground="#EDF1EA" Background="#769D64"/>
-        <Button Content="Anuluj" Grid.Row="4" Grid.Column="1" Click="Button_Click_1"
+        <Button Content="Cancel" Grid.Row="6" Grid.Column="1" Click="Button_Click_1"
                 FontFamily="Century Gothic" FontSize="36" Foreground="White" Background="#9D6476"/>
+
     </Grid>
 </Window>
