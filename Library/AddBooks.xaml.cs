@@ -61,11 +61,6 @@ namespace Library
 				return false;
 			}
 
-			if (date_txt.Text == string.Empty)
-			{
-				MessageBox.Show("Date is required", "Failed", MessageBoxButton.OK, MessageBoxImage.Error);
-				return false;
-			}
 			return true;
 		}
 
@@ -76,7 +71,6 @@ namespace Library
 			cover_txt.Clear();
 			language_txt.Clear();
 			type_txt.Clear();
-			date_txt.Clear();
 		}
 
 		private void Button_Click(object sender, RoutedEventArgs e)
@@ -85,14 +79,13 @@ namespace Library
 			{
 				if (isValid())
 				{
-					SqlCommand cmd = new SqlCommand("INSERT INTO Books VALUES (@Name, @Genre, @Cover, @Language, @Type, @Date)", OrderBooks.Globals.con);
+					SqlCommand cmd = new SqlCommand("INSERT INTO Books VALUES (@Name, @Genre, @Cover, @Language, @Type)", OrderBooks.Globals.con);
 					cmd.CommandType = CommandType.Text;
 					cmd.Parameters.AddWithValue("@Name", name_txt.Text);
 					cmd.Parameters.AddWithValue("@Genre", genre_txt.Text);
 					cmd.Parameters.AddWithValue("@Cover", cover_txt.Text);
 					cmd.Parameters.AddWithValue("@Language", language_txt.Text);
 					cmd.Parameters.AddWithValue("@Type", type_txt.Text);
-					cmd.Parameters.AddWithValue("@Date", date_txt.Text);
 					OrderBooks.Globals.con.Open();
 					cmd.ExecuteNonQuery();
 					OrderBooks.Globals.con.Close();
