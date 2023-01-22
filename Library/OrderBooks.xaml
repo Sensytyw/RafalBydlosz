@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="Library" Height="450" Width="800" Closing="Window_Closing" >
+        Title="Library" Height="450" Width="800" Closing="Window_Closing" Icon="/Book.png" >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
