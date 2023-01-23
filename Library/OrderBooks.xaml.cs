@@ -38,6 +38,7 @@ namespace Library
 		private void ButtonAdd(object sender, RoutedEventArgs e)
 		{
 			AddBooks okno = new AddBooks();
+			okno.Button_Ad.Visibility = Visibility.Visible;
 			Books ksiazka = new Books();
 			okno.DataContext = ksiazka;
 			okno.ShowDialog();
@@ -50,46 +51,9 @@ namespace Library
 
 		private void ButtonEddit(object sender, RoutedEventArgs e)
 		{
-			AddBooks ab = new AddBooks();
-			Globals.con.Open();
-			SqlCommand cmd = new SqlCommand("update Books set Name= '"+ ab.name_txt.Text + "'," +
-				"Genre= '"+ ab.genre_txt.Text + "',Cover= '"+ ab.cover_txt.Text + "'" +
-				",Language= '"+ ab.language_txt.Text + "',Type= '"+ ab.type_txt.Text + "'", Globals.con);
-			try
-			{
-				cmd.ExecuteNonQuery();
-				MessageBox.Show("Record has been Edited successfully", "Edited", MessageBoxButton.OK, MessageBoxImage.Information);
-				Globals.con.Close();
-				AddBooks addBooks = new AddBooks();
-				addBooks.clearData();
-				LoadGrid();
-				Globals.con.Close();
-
-			}
-			catch (SqlException ex)
-			{
-				MessageBox.Show("Not edited" + ex.Message);
-			}
-			finally
-			{
-				Globals.con.Close();
-				ab.clearData();
-				LoadGrid();
-			}
-
-			if (dataGridBooks.SelectedItem != null)
-			{
-				AddBooks okno = new AddBooks();
-				Books ksiazka = new Books((Books)dataGridBooks.SelectedItem);
-				okno.DataContext = ksiazka;
-				okno.ShowDialog();
-				if (okno.IsOkPressed)
-				{
-					int index = listOfBooks.IndexOf((Books)dataGridBooks.SelectedItem);
-					listOfBooks[index] = ksiazka;
-					dataGridBooks.Items.Refresh();
-				}
-			}
+			AddBooks aB = new AddBooks();
+			aB.Button_Ed.Visibility = Visibility.Visible;
+			aB.ShowDialog();
 		}
 
 		private void ButtonRemove(object sender, RoutedEventArgs e)

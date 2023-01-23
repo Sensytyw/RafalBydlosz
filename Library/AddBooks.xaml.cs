@@ -14,8 +14,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
-
 namespace Library
 {
 	/// <summary>
@@ -75,7 +73,7 @@ namespace Library
 			orderBooks.remove_row.Clear();
 		}
 
-		private void Button_Confirm(object sender, RoutedEventArgs e)
+		public void Button_Add(object sender, RoutedEventArgs e)
 		{
 			try
 			{
@@ -115,6 +113,37 @@ namespace Library
 		private void Button_Clear(object sender, RoutedEventArgs e)
 		{
 			clearData();
+		}
+
+		public void Button_Eddit(object sender, RoutedEventArgs e)
+		{
+			AddBooks ab = new AddBooks();
+			OrderBooks.Globals.con.Open();
+			SqlCommand cmd = new SqlCommand("update Books set Name = '" + ab.name_txt.Text + "'," +
+				"Genre= '" + ab.genre_txt.Text + "',Cover= '" + ab.cover_txt.Text + "'" +
+				",Language= '" + ab.language_txt.Text + "',Type= '" + ab.type_txt.Text + "'", OrderBooks.Globals.con);
+			try
+			{
+				cmd.ExecuteNonQuery();
+				MessageBox.Show("Record has been Edited successfully", "Edited", MessageBoxButton.OK, MessageBoxImage.Information);
+				OrderBooks.Globals.con.Close();
+				OrderBooks oB = new OrderBooks();
+				clearData();
+				oB.LoadGrid();
+				OrderBooks.Globals.con.Close();
+
+			}
+			catch (SqlException ex)
+			{
+				MessageBox.Show("Not edited" + ex.Message);
+			}
+			finally
+			{
+				OrderBooks oB = new OrderBooks();
+				OrderBooks.Globals.con.Close();
+				clearData();
+				oB.LoadGrid();				
+			}
 		}
 	}
 }
