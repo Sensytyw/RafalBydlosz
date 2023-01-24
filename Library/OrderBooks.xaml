@@ -23,7 +23,7 @@
                 FontFamily="Century Gothic" />
 
         <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="Insert ID of book you want to remove:" Margin="10" FontSize="24" VerticalAlignment="Center" TextAlignment="Right" TextWrapping="Wrap" Foreground="#E9EDE9"/>
-        <TextBox x:Name="remove_row" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="24"/>
+        <TextBox x:Name="id_row" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="24"/>
         <Button x:Name="AddBtn"  Click="ButtonAdd" Grid.Row="2" Grid.ColumnSpan="2" Content="Add"
                 Background="#5E7E5E" FontFamily="Century Gothic"
                 FontSize="32" Foreground="#E9EDE9"

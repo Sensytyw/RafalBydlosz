@@ -23,5 +23,12 @@ namespace Library
 		{
 			InitializeComponent();
 		}
-	}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			OrderBooks app= new OrderBooks();
+			app.Show();
+			Close();
+        }
+    }
 }

@@ -59,7 +59,7 @@ namespace Library
 		private void ButtonRemove(object sender, RoutedEventArgs e)
 		{
 			Globals.con.Open();
-			SqlCommand cmd = new SqlCommand("delete from Books where BookId =" + remove_row.Text + " ", Globals.con);
+			SqlCommand cmd = new SqlCommand("delete from Books where BookId =" + id_row.Text + " ", Globals.con);
 			try 
 			{ 
 				cmd.ExecuteNonQuery();

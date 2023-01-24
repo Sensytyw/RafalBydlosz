@@ -70,7 +70,7 @@ namespace Library
 			language_txt.Clear();
 			type_txt.Clear();
 			OrderBooks orderBooks= new OrderBooks();
-			orderBooks.remove_row.Clear();
+			orderBooks.id_row.Clear();
 		}
 
 		public void Button_Add(object sender, RoutedEventArgs e)
@@ -117,11 +117,11 @@ namespace Library
 
 		public void Button_Eddit(object sender, RoutedEventArgs e)
 		{
-			AddBooks ab = new AddBooks();
+			OrderBooks oB2 = new OrderBooks();
 			OrderBooks.Globals.con.Open();
-			SqlCommand cmd = new SqlCommand("update Books set Name = '" + ab.name_txt.Text + "'," +
-				"Genre= '" + ab.genre_txt.Text + "',Cover= '" + ab.cover_txt.Text + "'" +
-				",Language= '" + ab.language_txt.Text + "',Type= '" + ab.type_txt.Text + "'", OrderBooks.Globals.con);
+			SqlCommand cmd = new SqlCommand("UPDATE Books SET Name = '" + name_txt.Text + "'," +
+				"Genre= '" + genre_txt.Text + "',Cover= '" + cover_txt.Text + "'" +
+				",Language= '" + language_txt.Text + "',Type= '" + type_txt.Text + "' WHERE BookId ='" + oB2.id_row.Text + "'", OrderBooks.Globals.con);
 			try
 			{
 				cmd.ExecuteNonQuery();
