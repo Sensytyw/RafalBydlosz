@@ -4,26 +4,54 @@ using System.IO;
 using System.Data.SqlClient;
 using System.Data;
 using System.Security.Cryptography.X509Certificates;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using System.Windows.Data;
+using System;
+using System.Globalization;
+using System.Windows.Media;
 
 namespace Library
 {
 	/// <summary>
 	/// Interaction logic for OrderBooks.xaml
 	/// </summary>
-	public partial class OrderBooks : Window
+	public partial class OrderBooks : Window, INotifyPropertyChanged
 	{
-		List<Books> listOfBooks = new List<Books>();
+		//public Themes Background { get; private set; }
+		
+		//public void SetBackground(Brush brushColor)
+		//{
+		//	Themes background = new Themes();
+		//	background.Color=brushColor;
+		//}
 
+		#region OrderBooks
+		//Themes _background = new Themes();
 		public OrderBooks()
 		{
 			InitializeComponent();
 			LoadGrid();
+			//DataContext= _background;
 		}
+		#endregion
+
+
+		#region Property Changed Block
+		public event PropertyChangedEventHandler PropertyChanged;
+		private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+		{
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+		}
+		#endregion
+
+		#region Global connection
 		public static class Globals
 			{
 				public static SqlConnection con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=LibraryProject;Integrated Security=True");
 			}
-
+		#endregion
+		#region LoadGrid
 		public void LoadGrid()
 		{
 			SqlCommand cmd = new SqlCommand("select * from Books", Globals.con);
@@ -34,7 +62,9 @@ namespace Library
 			Globals.con.Close();
 			dataGridBooks.ItemsSource = dt.DefaultView;
 		}
+		#endregion
 
+		#region Buttons
 		private void ButtonAdd(object sender, RoutedEventArgs e)
 		{
 			AddBooks okno = new AddBooks();
@@ -42,11 +72,6 @@ namespace Library
 			Books ksiazka = new Books();
 			okno.DataContext = ksiazka;
 			okno.ShowDialog();
-			if (okno.IsOkPressed)
-			{
-				listOfBooks.Add(ksiazka);
-				dataGridBooks.Items.Refresh();
-			}
 		}
 
 		private void ButtonEddit(object sender, RoutedEventArgs e)
@@ -80,6 +105,25 @@ namespace Library
 				Globals.con.Close();
 			}
 		}
+		#endregion Add
 
+		private void ThemeClick_Dark(object sender, RoutedEventArgs e)
+		{
+			//SetBackground(Brushes.Black);
+		}
+		private void ThemeClick_Light(object sender, RoutedEventArgs e)
+		{
+			//SetBackground(Brushes.White);
+		}
+
+		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			throw new NotImplementedException();
+		}
+
+		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+		{
+			throw new NotImplementedException();
+		}
 	}
 }
