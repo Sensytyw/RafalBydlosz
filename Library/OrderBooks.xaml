@@ -3,11 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Library" d:DataContext="{d:DesignInstance Type=local:Themes}"
+        xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="Library" Height="450" Width="800" Icon="/Book.png" Background="#2B2B2B" >
-    <Grid>
-        <!--Background="{Binding Background.Color}"-->
+        Title="Library" Height="450" Width="800" Icon="/Book.png" >
+    <Grid Background="{Binding ElementName=Themes, Path=SelectedItem.Background, Mode=TwoWay}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
@@ -20,10 +19,12 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DataGrid x:Name="dataGridBooks" Grid.ColumnSpan="4" Margin="-4,0,4,0"
+        <DataGrid x:Name="dataGridBooks" Grid.ColumnSpan="3" Margin="-4,0,4,0"
                 FontFamily="Century Gothic" />
 
-        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="Insert ID of book you want to remove:" Margin="10" FontSize="24" VerticalAlignment="Center" TextAlignment="Right" TextWrapping="Wrap" Foreground="#E9EDE9"/>
+        <TextBlock Foreground="{Binding ElementName=Themes, Path=SelectedItem.Foreground, Mode=TwoWay}"
+                   Grid.Row="1" Grid.ColumnSpan="2" Text="Insert ID of book you want to remove:" Margin="10" FontSize="24" VerticalAlignment="Center"
+                   TextAlignment="Right" TextWrapping="Wrap"/>
         <TextBox x:Name="id_row" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="24"/>
         <Button x:Name="AddBtn"  Click="ButtonAdd" Grid.Row="2" Grid.ColumnSpan="2" Content="Add"
                 Background="#5E7E5E" FontFamily="Century Gothic"
@@ -37,12 +38,15 @@
                 Background="#7E5E7E" FontFamily="Century Gothic"
                 FontSize="32" Margin="40" Foreground="#E9EDE9"
                 BorderThickness="4" BorderBrush="#654B65"/>
-        <Label Content="Theme:" Grid.Row="3" Grid.Column="3" HorizontalAlignment="Right"
-               VerticalAlignment="Bottom" FontFamily="Century Gothic" Foreground="Aqua" Margin="0,0,0,20"/>
-        <Button x:Name="ThemeLight" Click="ThemeClick_Light" Grid.Column="3" Grid.Row="2"  Height="25"
-                Width="25" Margin="0,0,25,0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="White" />
-        <Button x:Name="ThemeDark" Click="ThemeClick_Dark" Grid.Column="3" Grid.Row="2"  Height="25"
-                Width="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" Background="Black" />
-
+        <Label Foreground="{Binding ElementName=Themes, Path=SelectedItem.Foreground, Mode=TwoWay}"
+               Content="Themes:" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center"
+               VerticalAlignment="Top" FontFamily="Century Gothic" Margin="0,15,0,0"/>
+        <ListBox x:Name="Themes" Background="{Binding ElementName=Themes, Path=SelectedItem.Background, Mode=TwoWay}"
+                 Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center" SelectedIndex="1" Margin="40">
+            <ListBoxItem Grid.Column="3" Grid.Row="2"  Height="25" Margin="0,0,50,0"
+                Width="25" VerticalAlignment="Bottom" Background="#DDE4E9" Foreground="#2B2B2B" />
+            <ListBoxItem Grid.Column="3" Grid.Row="2"  Height="25" Margin="0,0,0,0"
+                Width="25" VerticalAlignment="Bottom" Background="#2B2B2B" Foreground="#E9EDE9" />
+        </ListBox>
     </Grid>
 </Window>

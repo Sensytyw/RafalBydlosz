@@ -18,21 +18,12 @@ namespace Library
 	/// </summary>
 	public partial class OrderBooks : Window, INotifyPropertyChanged
 	{
-		//public Themes Background { get; private set; }
-		
-		//public void SetBackground(Brush brushColor)
-		//{
-		//	Themes background = new Themes();
-		//	background.Color=brushColor;
-		//}
 
 		#region OrderBooks
-		//Themes _background = new Themes();
 		public OrderBooks()
 		{
 			InitializeComponent();
 			LoadGrid();
-			//DataContext= _background;
 		}
 		#endregion
 
@@ -105,16 +96,7 @@ namespace Library
 				Globals.con.Close();
 			}
 		}
-		#endregion Add
-
-		private void ThemeClick_Dark(object sender, RoutedEventArgs e)
-		{
-			//SetBackground(Brushes.Black);
-		}
-		private void ThemeClick_Light(object sender, RoutedEventArgs e)
-		{
-			//SetBackground(Brushes.White);
-		}
+		#endregion
 
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 		{
