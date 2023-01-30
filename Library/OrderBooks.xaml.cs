@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System;
 using System.Globalization;
 using System.Windows.Media;
+using System.Windows.Controls;
 
 namespace Library
 {
@@ -18,7 +19,7 @@ namespace Library
 	/// </summary>
 	public partial class OrderBooks : Window, INotifyPropertyChanged
 	{
-		int id;
+		
 
 		#region OrderBooks
 		public OrderBooks()
@@ -53,7 +54,7 @@ namespace Library
 			dataAdapter.Fill(dt);
 			SqlDataReader sdr = cmd.ExecuteReader();
 			//dt.Load(sdr);
-			//Globals.con.Close();
+			Globals.con.Close();
 			dataGridBooks.ItemsSource = dt.DefaultView;
 		}
 		#endregion
@@ -78,9 +79,9 @@ namespace Library
 		private void ButtonRemove(object sender, RoutedEventArgs e)
 		{
 			Globals.con.Open();
-			SqlCommand cmd = new SqlCommand("delete from Books where BookId =" + id + " ", Globals.con);
+			SqlCommand cmd = new SqlCommand("delete from Books where BookId =" + id_row.Text + " ", Globals.con);
 			try 
-			{ 
+			{				
 				cmd.ExecuteNonQuery();
 				MessageBox.Show("Record has been removed","Removed", MessageBoxButton.OK, MessageBoxImage.Information);
 				Globals.con.Close();
@@ -92,7 +93,7 @@ namespace Library
 			}
 			catch (SqlException ex)
 			{
-				MessageBox.Show("Not removed" + ex.Message);
+				MessageBox.Show("Not removed " + ex.Message);
 			}
 			finally
 			{
@@ -113,7 +114,13 @@ namespace Library
 
 		private void dataGridBooks_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
 		{
-
+			AddBooks aB = new AddBooks();
+			DataGrid dg = sender as DataGrid;
+			DataRowView dr = dg.SelectedItem as DataRowView;
+			if (dr != null)
+			{
+				id_row.Text = dr["BookId"].ToString();
+			}
 		}
 	}
 }

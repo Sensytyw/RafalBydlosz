@@ -93,6 +93,7 @@ namespace Library
 					orderBooks.LoadGrid();
 					MessageBox.Show("Succesfully registered", "Saved", MessageBoxButton.OK, MessageBoxImage.Information);
 					clearData();
+					orderBooks.dataGridBooks.Items.Refresh();
 				}
 			}
 			catch(SqlException ex)

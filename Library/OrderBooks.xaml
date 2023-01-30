@@ -31,7 +31,7 @@
             </DataGrid.Columns>
         </DataGrid>
             <TextBlock Foreground="{Binding ElementName=Themes, Path=SelectedItem.Foreground, Mode=TwoWay}"
-                   Grid.Row="1" Grid.ColumnSpan="2" Text="Insert ID of book you want to remove:" Margin="10" FontSize="24" VerticalAlignment="Center"
+                   Grid.Row="1" Grid.ColumnSpan="2" Text="ID of book you want to remove:" Margin="10" FontSize="24" VerticalAlignment="Center"
                    TextAlignment="Right" TextWrapping="Wrap"/>
         <TextBox x:Name="id_row" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="24"/>
         <Button x:Name="AddBtn"  Click="ButtonAdd" Grid.Row="2" Grid.ColumnSpan="2" Content="Add"
