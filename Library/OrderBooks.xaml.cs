@@ -18,6 +18,7 @@ namespace Library
 	/// </summary>
 	public partial class OrderBooks : Window, INotifyPropertyChanged
 	{
+		int id;
 
 		#region OrderBooks
 		public OrderBooks()
@@ -46,11 +47,13 @@ namespace Library
 		public void LoadGrid()
 		{
 			SqlCommand cmd = new SqlCommand("select * from Books", Globals.con);
-			DataTable dt = new DataTable();
 			Globals.con.Open();
+			SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+			DataTable dt = new DataTable("Books");
+			dataAdapter.Fill(dt);
 			SqlDataReader sdr = cmd.ExecuteReader();
-			dt.Load(sdr);
-			Globals.con.Close();
+			//dt.Load(sdr);
+			//Globals.con.Close();
 			dataGridBooks.ItemsSource = dt.DefaultView;
 		}
 		#endregion
@@ -75,7 +78,7 @@ namespace Library
 		private void ButtonRemove(object sender, RoutedEventArgs e)
 		{
 			Globals.con.Open();
-			SqlCommand cmd = new SqlCommand("delete from Books where BookId =" + id_row.Text + " ", Globals.con);
+			SqlCommand cmd = new SqlCommand("delete from Books where BookId =" + id + " ", Globals.con);
 			try 
 			{ 
 				cmd.ExecuteNonQuery();
@@ -106,6 +109,11 @@ namespace Library
 		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
 		{
 			throw new NotImplementedException();
+		}
+
+		private void dataGridBooks_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+		{
+
 		}
 	}
 }
