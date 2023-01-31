@@ -62,44 +62,15 @@ namespace Library
 		#region Buttons
 		private void ButtonAdd(object sender, RoutedEventArgs e)
 		{
-			AddBooks okno = new AddBooks();
-			okno.Button_Ad.Visibility = Visibility.Visible;
-			Books ksiazka = new Books();
-			okno.DataContext = ksiazka;
-			okno.ShowDialog();
+			AddBooks abWindow = new AddBooks();
+			abWindow.Button_Ad.Visibility = Visibility.Visible;
+			abWindow.CancelAdd.Visibility = Visibility.Visible;
+			Books book = new Books();
+			abWindow.DataContext = book;
+			abWindow.Show();
+			Close();
 		}
 
-		private void ButtonEddit(object sender, RoutedEventArgs e)
-		{
-			AddBooks aB = new AddBooks();
-			aB.Button_Ed.Visibility = Visibility.Visible;
-			aB.ShowDialog();
-		}
-
-		private void ButtonRemove(object sender, RoutedEventArgs e)
-		{
-			Globals.con.Open();
-			SqlCommand cmd = new SqlCommand("delete from Books where BookId =" + id_row.Text + " ", Globals.con);
-			try 
-			{				
-				cmd.ExecuteNonQuery();
-				MessageBox.Show("Record has been removed","Removed", MessageBoxButton.OK, MessageBoxImage.Information);
-				Globals.con.Close();
-				AddBooks addBooks = new AddBooks();
-				addBooks.clearData();
-				LoadGrid();
-				Globals.con.Close();
-
-			}
-			catch (SqlException ex)
-			{
-				MessageBox.Show("Not removed " + ex.Message);
-			}
-			finally
-			{
-				Globals.con.Close();
-			}
-		}
 		#endregion
 
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -112,14 +83,25 @@ namespace Library
 			throw new NotImplementedException();
 		}
 
-		private void dataGridBooks_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+		public void dataGridBooks_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
 		{
 			AddBooks aB = new AddBooks();
 			DataGrid dg = sender as DataGrid;
 			DataRowView dr = dg.SelectedItem as DataRowView;
 			if (dr != null)
 			{
-				id_row.Text = dr["BookId"].ToString();
+				aB.id_row.Text = dr["BookId"].ToString();
+				aB.CancelEdit.Visibility = Visibility.Visible;
+				aB.Button_Ed.Visibility = Visibility.Visible;
+				aB.name_txt.Text = dr["Name"].ToString();
+				aB.genre_txt.Text = dr["Genre"].ToString();
+				aB.cover_txt.Text = dr["Cover"].ToString();
+				aB.language_txt.Text = dr["Language"].ToString();
+				aB.type_txt.Text = dr["Type"].ToString();
+				aB.Show();
+				aB.Button_Ad.Visibility = Visibility.Visible;
+				aB.CancelAdd.Visibility = Visibility.Visible;
+				Close();
 			}
 		}
 	}

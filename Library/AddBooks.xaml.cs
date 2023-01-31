@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static Library.OrderBooks;
+
 namespace Library
 {
 	/// <summary>
@@ -69,8 +71,7 @@ namespace Library
 			cover_txt.Clear();
 			language_txt.Clear();
 			type_txt.Clear();
-			OrderBooks orderBooks= new OrderBooks();
-			orderBooks.id_row.Clear();
+			id_row.Clear();
 		}
 
 		public void Button_Add(object sender, RoutedEventArgs e)
@@ -100,13 +101,23 @@ namespace Library
 			{
 				MessageBox.Show(ex.Message);
 			}
-
+			OrderBooks oB = new OrderBooks();
+			oB.Show();
 			IsOkPressed = true;
 			this.Close();
 		}
 
-		private void Button_Cancel(object sender, RoutedEventArgs e)
+		public void Button_Cancel_Add(object sender, RoutedEventArgs e)
 		{
+			OrderBooks oB = new OrderBooks();
+			oB.Show();
+			IsOkPressed = false;
+			this.Close();
+		}
+		public void Button_Cancel_Edit(object sender, RoutedEventArgs e)
+		{
+			OrderBooks oB = new OrderBooks();
+			oB.Show();
 			IsOkPressed = false;
 			this.Close();
 		}
@@ -118,11 +129,10 @@ namespace Library
 
 		public void Button_Eddit(object sender, RoutedEventArgs e)
 		{
-			OrderBooks oB2 = new OrderBooks();
 			OrderBooks.Globals.con.Open();
 			SqlCommand cmd = new SqlCommand("UPDATE Books SET Name = '" + name_txt.Text + "'," +
 				"Genre= '" + genre_txt.Text + "',Cover= '" + cover_txt.Text + "'" +
-				",Language= '" + language_txt.Text + "',Type= '" + type_txt.Text + "' WHERE BookId ='" + oB2.id_row.Text + "'", OrderBooks.Globals.con);
+				",Language= '" + language_txt.Text + "',Type= '" + type_txt.Text + "' WHERE BookId ='" + id_row.Text + "'", OrderBooks.Globals.con);
 			try
 			{
 				cmd.ExecuteNonQuery();
@@ -143,7 +153,34 @@ namespace Library
 				OrderBooks oB = new OrderBooks();
 				OrderBooks.Globals.con.Close();
 				clearData();
-				oB.LoadGrid();				
+				oB.LoadGrid();	
+				oB.Show();
+				Close();
+			}
+		}
+
+		private void Button_Remove(object sender, RoutedEventArgs e)
+		{
+			Globals.con.Open();
+			SqlCommand cmd = new SqlCommand("delete from Books where BookId =" + id_row.Text + " ", Globals.con);
+			try
+			{
+				cmd.ExecuteNonQuery();
+				MessageBox.Show("Record has been removed", "Removed", MessageBoxButton.OK, MessageBoxImage.Information);
+				Globals.con.Close();
+				OrderBooks oB4 = new OrderBooks();
+				clearData();
+				oB4.LoadGrid();
+				Globals.con.Close();
+
+			}
+			catch (SqlException ex)
+			{
+				MessageBox.Show("Not removed " + ex.Message);
+			}
+			finally
+			{
+				Globals.con.Close();
 			}
 		}
 	}

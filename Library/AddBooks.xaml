@@ -19,6 +19,7 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
         <Label FontSize="32" FontFamily="Century Gothic" VerticalAlignment="Center"
                HorizontalAlignment="Right" Content="Name:"
@@ -35,6 +36,9 @@
         <Label Grid.Row="4" FontSize="32" FontFamily="Century Gothic"
                VerticalAlignment="Center" HorizontalAlignment="Right"
                Background="Transparent" Content="Type:" Foreground="#F1EDEA"/>
+        <Label FontSize="32" Grid.Row="7" Grid.Column="1" FontFamily="Century Gothic"
+               VerticalAlignment="Center" HorizontalAlignment="Right" Content="ID:"
+               Background="Transparent" Foreground="#F1EDEA"/>
         <TextBox Grid.ColumnSpan="2" x:Name="name_txt" Grid.Column="1" FontFamily="Century Gothic" FontSize="32"
                  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         <TextBox Grid.ColumnSpan="2" x:Name="genre_txt" Grid.Column="1" Grid.Row="1" FontFamily="Century Gothic" FontSize="32" 
@@ -45,14 +49,20 @@
                  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         <TextBox Grid.ColumnSpan="2" x:Name="type_txt" Grid.Column="1" Grid.Row="4" FontFamily="Century Gothic" FontSize="32"
                  HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="id_row" Grid.Column="2" Grid.Row="6" FontFamily="Century Gothic" FontSize="32"
+                 HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         <Button  x:Name="Button_Ad" Content="Confirm" Grid.Row="5" Click="Button_Add"
                 FontFamily="Century Gothic" FontSize="36" Foreground="#EDF1EA" Background="#769D64" Visibility="Hidden"/>
         <Button x:Name="Button_Ed" Content="Confirm" Grid.Row="5" Click="Button_Eddit"
                 FontFamily="Century Gothic" FontSize="36" Foreground="#EDF1EA" Background="#769D64" Visibility="Hidden"/>
-        <Button Content="Cancel" Margin="4" Grid.Row="5" Grid.Column="1" Click="Button_Cancel"
-                FontFamily="Century Gothic" FontSize="36" Foreground="White" Background="#9D6476"/>
+        <Button x:Name="CancelAdd" Content="Cancel" Margin="4" Grid.Row="5" Grid.Column="1" Click="Button_Cancel_Add"
+                FontFamily="Century Gothic" FontSize="36" Foreground="White" Background="#9D6476" Visibility="Hidden"/>
+        <Button x:Name="CancelEdit" Content="Cancel" Margin="4" Grid.Row="5" Grid.Column="1" Click="Button_Cancel_Edit"
+                FontFamily="Century Gothic" FontSize="36" Foreground="White" Background="#9D6476" Visibility="Hidden"/>
         <Button Content="Clear" Margin="4"  Grid.Row="5" Grid.Column="2" Click="Button_Clear"
                 FontFamily="Century Gothic" FontSize="36" Foreground="White" Background="#8B649D"/>
+        <Button x:Name="Remove" Content="Remove" Margin="4" Grid.Row="6"  Click="Button_Remove"
+                FontFamily="Century Gothic" FontSize="36" Foreground="White" Background="#9D6476" />
 
     </Grid>
 </Window>

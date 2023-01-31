@@ -8,19 +8,19 @@
         Title="Library" Height="450" Width="800" Icon="/Book.png" >
     <Grid Background="{Binding ElementName=Themes, Path=SelectedItem.Background, Mode=TwoWay}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
-            <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <DataGrid AutoGenerateColumns="False" x:Name="dataGridBooks" Grid.ColumnSpan="3" Margin="-4,0,4,0"
-                FontFamily="Century Gothic" SelectionChanged="dataGridBooks_SelectionChanged">
+        <DataGrid AutoGenerateColumns="False" x:Name="dataGridBooks" Grid.ColumnSpan="3" Grid.RowSpan="2" Margin="-4,0,4,0"
+                FontFamily="Century Gothic" SelectionChanged="dataGridBooks_SelectionChanged"
+                  Background="{Binding ElementName=Themes, Path=SelectedItem.Background, Mode=TwoWay}">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding BookId}" Header="Id" Width="30"/>
                 <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="150"/>
@@ -30,22 +30,10 @@
                 <DataGridTextColumn Binding="{Binding Type}" Header="Type" Width="100"/>
             </DataGrid.Columns>
         </DataGrid>
-            <TextBlock Foreground="{Binding ElementName=Themes, Path=SelectedItem.Foreground, Mode=TwoWay}"
-                   Grid.Row="1" Grid.ColumnSpan="2" Text="ID of book you want to remove:" Margin="10" FontSize="24" VerticalAlignment="Center"
-                   TextAlignment="Right" TextWrapping="Wrap"/>
-        <TextBox x:Name="id_row" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="24"/>
-        <Button x:Name="AddBtn"  Click="ButtonAdd" Grid.Row="2" Grid.ColumnSpan="2" Content="Add"
+        <Button x:Name="AddBtn" Click="ButtonAdd" Grid.Row="2" Grid.Column="3" Content="Add"
                 Background="#5E7E5E" FontFamily="Century Gothic"
                 FontSize="32" Foreground="#E9EDE9"
                 BorderThickness="4" Margin="40" BorderBrush="#4B654B"/>
-        <Button x:Name="EditBtn"  Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Click="ButtonEddit" Content="Edit"
-                    Background="#584B65" FontFamily="Century Gothic"
-                FontSize="32" Foreground="#EDE9ED"
-                    BorderThickness="4" Margin="40" BorderBrush="#463C51"/>
-        <Button x:Name="RemoveBtn" Click="ButtonRemove" Grid.Column="3" Grid.Row="1" Content="Remove"
-                Background="#7E5E7E" FontFamily="Century Gothic"
-                FontSize="32" Margin="40" Foreground="#E9EDE9"
-                BorderThickness="4" BorderBrush="#654B65"/>
         <Label Foreground="{Binding ElementName=Themes, Path=SelectedItem.Foreground, Mode=TwoWay}"
                Content="Themes:" Grid.Row="0" Grid.Column="3" HorizontalAlignment="Center"
                VerticalAlignment="Top" FontFamily="Century Gothic" Margin="0,15,0,0"/>
