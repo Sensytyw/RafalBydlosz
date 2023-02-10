@@ -18,9 +18,7 @@ using static Library.OrderBooks;
 
 namespace Library
 {
-	/// <summary>
-	/// Interaction logic for AddBooks.xaml
-	/// </summary>
+
 	public partial class AddBooks : Window
 	{
 		public bool IsOkPressed { get; set; }
@@ -101,6 +99,7 @@ namespace Library
 			{
 				MessageBox.Show(ex.Message);
 			}
+
 			OrderBooks oB = new OrderBooks();
 			oB.Show();
 			IsOkPressed = true;
@@ -114,6 +113,7 @@ namespace Library
 			IsOkPressed = false;
 			this.Close();
 		}
+
 		public void Button_Cancel_Edit(object sender, RoutedEventArgs e)
 		{
 			OrderBooks oB = new OrderBooks();
@@ -144,10 +144,12 @@ namespace Library
 				OrderBooks.Globals.con.Close();
 
 			}
+
 			catch (SqlException ex)
 			{
 				MessageBox.Show("Not edited" + ex.Message);
 			}
+
 			finally
 			{
 				OrderBooks oB = new OrderBooks();
@@ -174,10 +176,12 @@ namespace Library
 				Globals.con.Close();
 
 			}
+
 			catch (SqlException ex)
 			{
 				MessageBox.Show("Not removed " + ex.Message);
 			}
+
 			finally
 			{
 				Globals.con.Close();

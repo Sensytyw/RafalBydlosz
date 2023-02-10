@@ -19,8 +19,6 @@ namespace Library
 	/// </summary>
 	public partial class OrderBooks : Window, INotifyPropertyChanged
 	{
-		
-
 		#region OrderBooks
 		public OrderBooks()
 		{
@@ -28,7 +26,6 @@ namespace Library
 			LoadGrid();
 		}
 		#endregion
-
 
 		#region Property Changed Block
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -44,6 +41,7 @@ namespace Library
 				public static SqlConnection con = new SqlConnection(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=LibraryProject;Integrated Security=True");
 			}
 		#endregion
+
 		#region LoadGrid
 		public void LoadGrid()
 		{
