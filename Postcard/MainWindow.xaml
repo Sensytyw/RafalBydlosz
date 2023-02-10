@@ -5,12 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Postcard"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#F8F8F8">
+        Title="MainWindow" Height="800" Width="450" Background="#F8F8F8">
     <Grid>
-        <StackPanel Margin="10">
+        <StackPanel>
             <Label Style="{StaticResource Zyczenia1}">WESOLYCH</Label>
             <Label Style="{StaticResource Zyczenia2}">SWIAT</Label>
+            <Button Style="{StaticResource Hat}"></Button>
             <Button Style="{StaticResource SmallButton}"></Button>
+            <Button Style="{StaticResource Nose}"></Button>
+
             <Button Style="{StaticResource MediumButton}"></Button>
             <Button Style="{StaticResource BigButton}"></Button>
         </StackPanel>
