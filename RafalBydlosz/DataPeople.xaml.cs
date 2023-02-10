@@ -14,7 +14,7 @@ namespace RafalBydlosz
 		public DataPeople()
 		{
 			InitializeComponent();
-			if (File.Exists("C:\\Users\\Rafal\\Desktop\\Serializacja\\test.xml"))
+			if (File.Exists("test.xml"))
 			{
 				listOfPeoples = Serialization.DeserializeToObject<List<People>>("C:\\Users\\Rafal\\Desktop\\Serializacja\\test.xml");
 			}
