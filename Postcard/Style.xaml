@@ -6,21 +6,11 @@
         <Setter Property="FontFamily" Value="Gothic Century"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
-    
     <Style TargetType="Label" x:Key="Zyczenia2">
         <Setter Property="FontFamily" Value="Gothic Century"/>
         <Setter Property="Margin" Value="50"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
-
-
-
-
-
-
-
-
-
     <Style TargetType="Button" x:Key="SmallButton">
         <Setter Property="Background" Value="#FFFFFF"/>
         <Setter Property="Padding" Value="5"/>

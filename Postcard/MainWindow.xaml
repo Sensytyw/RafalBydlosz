@@ -13,7 +13,6 @@
             <Button Style="{StaticResource SmallButton}"></Button>
             <Button Style="{StaticResource MediumButton}"></Button>
             <Button Style="{StaticResource BigButton}"></Button>
-
         </StackPanel>
     </Grid>
 </Window>
