@@ -17,21 +17,13 @@ namespace Library
 	/// <summary>
 	/// Interaction logic for OrderBooks.xaml
 	/// </summary>
-	public partial class OrderBooks : Window, INotifyPropertyChanged
+	public partial class OrderBooks : Window
 	{
 		#region OrderBooks
 		public OrderBooks()
 		{
 			InitializeComponent();
 			LoadGrid();
-		}
-		#endregion
-
-		#region Property Changed Block
-		public event PropertyChangedEventHandler PropertyChanged;
-		private void OnPropertyChanged([CallerMemberName] string propertyName = null)
-		{
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
 		#endregion
 
@@ -63,8 +55,6 @@ namespace Library
 			AddBooks abWindow = new AddBooks();
 			abWindow.Button_Ad.Visibility = Visibility.Visible;
 			abWindow.CancelAdd.Visibility = Visibility.Visible;
-			Books book = new Books();
-			abWindow.DataContext = book;
 			abWindow.Show();
 			Close();
 		}
