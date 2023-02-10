@@ -93,10 +93,5 @@ namespace RafalBydlosz
 			op = '/';
 			ResultText.Clear();
 		}
-
-		private void ResultText_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
-		{
-
-		}
 	}
 }
